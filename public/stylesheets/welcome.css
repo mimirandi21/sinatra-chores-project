@@ -1,0 +1,12 @@
+@media screen {
+    
+    .background-image {
+        background-image: url(/images/family-1165911.jpg);
+        position:relative;
+        background-size: cover;
+        background-position: 0 35%;
+        height: 100%;
+        color: #fff;
+    }
+    
+}
