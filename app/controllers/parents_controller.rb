@@ -1,3 +1,6 @@
+require 'sinatra/base'
+require 'rack-flash'
+
 class ParentsController < ApplicationController
 
 
@@ -15,6 +18,7 @@ class ParentsController < ApplicationController
   get "/parents/:id" do
     @chores = Chore.where(:parent_id => session[:parent_id])
     @children = Child.where(:parent_id => session[:parent_id])
+    
     @parent = Parent.find_by_id(session[:parent_id])
     
     erb :"/parents/show"
@@ -28,12 +32,21 @@ class ParentsController < ApplicationController
 
   # PATCH: /parents/5
   patch "/parents/:id" do
-    redirect "/parents/:id"
+    @parent = Parent.find_by_id(params[:id])
+    @parent.update(params[:parent])
+    flash[:message] = "Your account has been updated."
+    redirect :"/parents/#{@parent.id}"
   end
 
+  get '/parents/:id/delete' do
+    @parent = Parent.find(params[:id])
+    erb :"/parents/delete"
+  end
   # DELETE: /parents/5/delete
-  delete "/parents/:id/delete" do
-    redirect "/parents"
+  delete "/parents/:id" do
+    parent = Parent.find_by_id(params[:id])
+    parent.destroy
+    redirect "/"
   end
 
   

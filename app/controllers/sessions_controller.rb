@@ -1,3 +1,6 @@
+require 'sinatra/base'
+require 'rack-flash'
+
 class SessionsController < ApplicationController
     get '/signup' do 
         @message = session[:message]
@@ -23,7 +26,6 @@ class SessionsController < ApplicationController
     end
 
     get '/parents_login' do
-        
         @message = session[:message]
         session[:message] = nil
         erb :'/sessions/parents_login'

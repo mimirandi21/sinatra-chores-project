@@ -4,15 +4,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Carter+One&family=Caveat:wght@700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Lato&family=Luckiest+Guy&family=Merienda+One&family=Permanent+Marker&family=Shadows+Into+Light&family=Ultra&display=swap" rel="stylesheet">
 
 <body id="body">
-    <h1>Edit a chore!</h1>
+    <h1>Edit <%= @chore.name %></h1>
 
-    <form method="post" action="/chores/:id/edit">
+    <form method="post" action="/chores/<%= @chore.id %>">
         <input id="hidden" type="hidden" name="_method" value="patch">
         <label for="name">Chore Name</label><input type="text" id="name" name="chore[name]" value="<%= @chore.name %>"><br/>
         <label for="value">Value of this Chore</label><input type="number" id="value" name="chore[value]" value="<%= @chore.value %>"><br/>
-        <input type="hidden" id="parent_id" name="chore[parent_id]" value="<% @parent.id %>"><br/>
-        <input type="hidden" id="tagged_complete" name="chore[tagged_complete]"><br/>
+        <input type="hidden" id="parent_id" name="chore[parent_id]" value="<%= @chore.parent_id %>"><br/>
+        <input type="hidden" id="tagged_complete" name="chore[tagged_complete]" value="<%= @chore.tagged_complete %>"><br/>
         
-        <input type="submit" value="Create a New Chore!">
+        <input type="submit" value="Edit this Chore!">
     </form>
 </body>

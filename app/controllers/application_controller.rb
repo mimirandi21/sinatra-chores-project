@@ -1,11 +1,15 @@
 require './config/environment'
 
 class ApplicationController < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
+  require 'sinatra/base'
+  require 'rack-flash'
 
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
+    use Rack::Flash
     set :session_secret, "parents_rule_kids_drool"
   end
 

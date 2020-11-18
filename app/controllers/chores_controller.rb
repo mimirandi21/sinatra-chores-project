@@ -1,3 +1,6 @@
+require 'sinatra/base'
+require 'rack-flash'
+
 class ChoresController < ApplicationController
 
 
@@ -17,16 +20,31 @@ class ChoresController < ApplicationController
 
   # GET: /chores/5/edit
   get "/chores/:id/edit" do
+    @chore = Chore.find_by_id(params[:id])
+    @parent = Parent.find_by(:id =>session[:parent_id])
     erb :"/chores/edit"
   end
 
   # PATCH: /chores/5
   patch "/chores/:id" do
-    redirect "/parents/show"
+    chore = Chore.find_by_id(params[:id])
+    @parent = Parent.find_by(:id =>session[:parent_id])
+    chore.update(params[:chore])
+    flash[:message] = "Chore has been updated."
+    redirect :"/parents/#{@parent.id}"
   end
 
+  get '/chores/:id/delete' do
+    @parent = Parent.find_by(:id =>session[:parent_id])
+    @chore = Chore.find(params[:id])
+    erb :"/chores/delete"
+  end
   # DELETE: /chores/5/delete
-  delete "/chores/:id/delete" do
-    redirect "/parents/show"
+  delete "/chores/:id" do
+    @parent = Parent.find_by(:id =>session[:parent_id])
+    chore = Chore.find_by_id(params[:id])
+    chore.destroy
+    flash[:message] = "Chore has been removed from the list."
+    redirect "/parents/#{@parent.id}"
   end
 end
