@@ -12,6 +12,10 @@
     width: 100%;
   }
 
+  form {
+    text-align: center;
+  }
+
   /* --- Welcome Page Styles --- */
   #body {
     background-color: #def4f0;
@@ -116,11 +120,7 @@
   }
 }
 
-  .background-image {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
+  
 
 .myButton {
 	box-shadow:inset 0px 1px 0px 0px #d9455f;
@@ -157,35 +157,11 @@
   
 }
 
-.flexbox-container {
-  display: flex;
-  flex-flow: row;
-  padding: 40px 0;
-  margin: 50px 0;
-}
+  .formclass {
+    text-align: center;
+  }
 
-.flexbox-left {
-  background-color: #def4f0;
-  flex: 2 50%;
-  text-align: center;
-  font-family: 'Ultra', serif;
-}
-
-.flexbox-left img {
-  padding: 10px 10px 10px 10px;
-  margin-top: 20px;
-}
-
-.flexbox-right {
-  background-color: #def4f0;
-  flex: 2 50%;
-  text-align: center;
-  font-family: 'Ultra', serif;
-
-}
-
-.flexbox-right img {
-  padding: 10px 10px 10px 10px;
-  margin: 70px 0;
-}
+  .centertext {
+    text-align: center;
+  }
 }

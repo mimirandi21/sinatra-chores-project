@@ -1,11 +1,5 @@
 class ParentsController < ApplicationController
 
-  
- 
-  # GET: /parents
-  get "/parents" do
-    erb :"/parents/index"
-  end
 
   # GET: /parents/new
   get "/parents/new" do
@@ -19,11 +13,16 @@ class ParentsController < ApplicationController
 
   # GET: /parents/5
   get "/parents/:id" do
+    @chores = Chore.where(:parent_id => session[:parent_id])
+    @children = Child.where(:parent_id => session[:parent_id])
+    @parent = Parent.find_by_id(session[:parent_id])
+    
     erb :"/parents/show"
   end
 
   # GET: /parents/5/edit
   get "/parents/:id/edit" do
+    @parent = Parent.find_by_id(params[:id])
     erb :"/parents/edit"
   end
 

@@ -1,4 +1,30 @@
 <link rel="stylesheet" href="/stylesheets/main.css" />
+<link rel="stylesheet" href="/stylesheets/parent.css" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Carter+One&family=Caveat:wght@700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Lato&family=Luckiest+Guy&family=Merienda+One&family=Permanent+Marker&family=Shadows+Into+Light&family=Ultra&display=swap" rel="stylesheet">
-<h1>This is the show page for an individual instance of your model.</h1>
+
+<body id="body">
+<!-- Side navigation -->
+<div class="sidenav">
+  <a href="/chores/new">Create a chore</a>
+  <a href="/children/new">Create a child</a>
+  <a href="/parents/<%= @parent.id %>/edit">Edit your account</a>
+  
+</div>
+
+<!-- Page content -->
+<div class="main">
+
+    <h1>Hello, <%= @parent.first_name %></h1>
+    <h2>What would you like to do?</h2>
+
+    <ul><% if @chores != nil %>
+        <% @chores.each do |chore|%>
+            <li><%= chore.name %></li>
+        <% end %></ul>
+    <% else %>
+        <h4>Huh, looks like you don't have any current chores.  Would you like to <a href="/chores/new">create</a> some?</h4>
+    <% end %>
+
+    </div>
+</body>

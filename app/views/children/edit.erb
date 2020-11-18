@@ -1,4 +1,18 @@
 <link rel="stylesheet" href="/stylesheets/main.css" />
+<link rel="stylesheet" href="/stylesheets/child.css" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Carter+One&family=Caveat:wght@700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Lato&family=Luckiest+Guy&family=Merienda+One&family=Permanent+Marker&family=Shadows+Into+Light&family=Ultra&display=swap" rel="stylesheet">
-<h1>Insert the form to edit an instance of your model here.</h1>
+
+<body id="body">
+    <h1>Edit <%= @child.name %></h1>
+
+    <form method="post" action="/children/:id/edit">
+        <input id="hidden" type="hidden" name="_method" value="patch">
+        <label for="name">Child Name</label><input type="text" id="name" name="child[name]" value="<%= @child.name %>"><br/>
+        <label for="password">Child's Password</label><input type="password" id="password" name="child[password]" value="<%= @child.password %>"><br/>
+        <input type="hidden" id="parent_id" name="child[parent_id]" value="<% @parent.id %>"><br/>
+        
+        
+        <input type="submit" value="Edit <%= @child.name %>!">
+    </form>
+</body>

@@ -6,7 +6,7 @@ class CreateChores < ActiveRecord::Migration
       t.integer :child_id, null: true
       t.float :value 
       t.integer :tagged_complete
-      t.timestamps null: false
+      
     end
   end
 end

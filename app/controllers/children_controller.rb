@@ -1,12 +1,9 @@
 class ChildrenController < ApplicationController
 
-  # GET: /children
-  get "/children" do
-    erb :"/children/index"
-  end
-
+  
   # GET: /children/new
   get "/children/new" do
+    @parent = Parent.find_by(:id =>session[:parent_id])
     erb :"/children/new"
   end
 
@@ -27,11 +24,11 @@ class ChildrenController < ApplicationController
 
   # PATCH: /children/5
   patch "/children/:id" do
-    redirect "/children/:id"
+    redirect "/parents/show"
   end
 
   # DELETE: /children/5/delete
   delete "/children/:id/delete" do
-    redirect "/children"
+    redirect "/parents/show"
   end
 end

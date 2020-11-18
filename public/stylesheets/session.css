@@ -1,0 +1,68 @@
+@media screen {
+    
+    .background-image {
+        background-image: url(/images/family-1165911.jpg);
+        position:relative;
+        background-size: cover;
+        background-position: 0 35%;
+        height: 100%;
+        color: #fff;
+    }
+    
+    
+.flexbox-container {
+    display: flex;
+    flex-flow: row;
+    padding: 40px 0 100px 0;
+    margin: 20px 0 10px 0;
+  }
+  
+  .flexbox-left {
+    background-color: #dbf6e9;
+    flex: 2 50%;
+    text-align: center;
+    font-family: 'Ultra', serif;
+    padding-top: 30px;
+    
+  }
+  
+  .flexbox-left img {
+    padding: 10px 10px 0px 10px;
+    margin-top: 30px;
+  }
+  
+  .flexbox-right {
+    background-color: #dbf6e9;
+    flex: 2 50%;
+    text-align: center;
+    font-family: 'Ultra', serif;
+    padding-top: 30px;
+    
+  }
+  
+  .flexbox-right img {
+    padding: 10px 10px 0px 10px;
+    margin-top: 80px;
+  }
+
+  .background-image {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  #biggiebody {
+    background-color: #dbf6e9;
+  }
+
+  .biggiesmalls {
+    position:fixed;
+    top:20;
+    height: 50px;
+    width:100%;
+    color:whitesmoke;
+    text-align: center;
+    font-size: 30px;
+    background-color: #16a596;
+}
+}

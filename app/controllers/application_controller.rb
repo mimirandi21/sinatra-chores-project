@@ -24,10 +24,19 @@ class ApplicationController < Sinatra::Base
     def current_user
       @current_user ||= Parent.find_by(id: session[:parent_id]) || @current_user ||= Child.find_by(id: session[:child_id])
     end
+
+    def has_account
+      if Parent.all.each{|parent| parent.email == @parent.email} == true
+        true
+      else
+        false
+      end
+      
+    end
     
     # finds all todos that are incomplete and have a datetime prior to current time
     def incomplete_chores(todos)
-      Chores.select{ |chore| chore.tagged_complete != 3 }
+      Chore.select{ |chore| chore.tagged_complete != 3 }
     end
     
   end
