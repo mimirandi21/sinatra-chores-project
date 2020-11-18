@@ -5,13 +5,14 @@
 
 <div role="alert"> <%= @message  %></div>
 
-<body id="body">
-    <h3 class="centertext">Log In Please</h3>
+<body class="login-background-image background-image">
+    
     <form method="post" action="/parents_login">
+    <h1>Log In Please</h1><br/>
     <label for="email">Email address</label>
     <input type="text" id="email" name="parent[email]"><br/>
     <label for="password">Password</label>
     <input type="password" id="password" name="parent[password]"><br/>
-    <input type="submit" value="Log In">
+    <input class="login-button" type="submit" value="Log In">
     </form> 
 </body>

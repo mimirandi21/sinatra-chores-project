@@ -12,8 +12,22 @@
     width: 100%;
   }
 
+  footer{
+    position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+  }
+
   form {
-    text-align: center;
+    left: 50%;
+    top: 50%;
+    
+    position: absolute;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
   }
 
   /* --- Welcome Page Styles --- */
@@ -87,6 +101,49 @@
     margin-top: 20px;
     padding-top: 20px;
   }
+
+  .myButton {
+    box-shadow:inset 0px 1px 0px 0px #d9455f;
+    background:linear-gradient(to bottom, #9a1f40 5%, #b4566f 100%);
+    background-color:#9a1f40;
+    border-radius:6px;
+    border:1px solid #d9455f;
+    display:inline-block;
+    cursor:pointer;
+    color:white;
+    font-family:Georgia;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 12px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px grey;
+  }
+  .myButton:hover {
+    background:linear-gradient(to bottom, #d9455f 5%, #e47e91 100%);
+    background-color:#d9455f;
+    color: black;
+  }
+  .myButton:active {
+    position:relative;
+    top:1px;
+  }
+  .centered {
+    position: absolute;
+    top: 30%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-family: 'Architects Daughter', cursive;
+    
+  }
+  
+    .formclass {
+      text-align: center;
+    }
+  
+    .centertext {
+      text-align: center;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -120,48 +177,5 @@
   }
 }
 
-  
 
-.myButton {
-	box-shadow:inset 0px 1px 0px 0px #d9455f;
-	background:linear-gradient(to bottom, #9a1f40 5%, #b4566f 100%);
-	background-color:#9a1f40;
-	border-radius:6px;
-	border:1px solid #d9455f;
-	display:inline-block;
-	cursor:pointer;
-	color:white;
-	font-family:Georgia;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 12px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px grey;
-}
-.myButton:hover {
-	background:linear-gradient(to bottom, #d9455f 5%, #e47e91 100%);
-  background-color:#d9455f;
-  color: black;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-.centered {
-  position: absolute;
-  top: 30%;
-  left: 75%;
-  transform: translate(-50%, -50%);
-  color: black;
-  font-family: 'Architects Daughter', cursive;
-  
-}
-
-  .formclass {
-    text-align: center;
-  }
-
-  .centertext {
-    text-align: center;
-  }
 }

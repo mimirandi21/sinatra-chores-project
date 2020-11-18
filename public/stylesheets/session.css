@@ -1,6 +1,6 @@
 @media screen {
     
-    .background-image {
+    .welcome-background-image {
         background-image: url(/images/family-1165911.jpg);
         position:relative;
         background-size: cover;
@@ -8,6 +8,40 @@
         height: 100%;
         color: #fff;
     }
+
+    .login-background-image {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url(/images/welcome2.jpg);
+      position:relative;
+      background-size: cover;
+      background-position: 0 35%;
+      height: 100%;
+      color: #fff;
+    }
+
+    .login-button {
+      box-shadow:inset 0px 1px 0px 0px #fff;
+      background:linear-gradient(to bottom, #fff 5%, rgb(211, 209, 209) 100%);
+      background-color:#fff;
+      border-radius:3px;
+      border:1px solid #884201;
+      display:inline-block;
+      cursor:pointer;
+      color:black;
+      font-family:Arial;
+      font-size:13px;
+      padding:6px 24px;
+      text-decoration:none;
+      text-shadow:0px 1px 0px grey;
+    }
+    .login-button:hover {
+      background:linear-gradient(to bottom, #fdcb92 5%, #fc9826 100%);
+      background-color:#fff;
+    }
+    .login-button:active {
+      position:relative;
+      top:1px;
+    }
+    
     
     
 .flexbox-container {
@@ -64,5 +98,5 @@
     text-align: center;
     font-size: 30px;
     background-color: #16a596;
-}
+  }
 }
