@@ -35,4 +35,6 @@ class ParentsController < ApplicationController
   delete "/parents/:id/delete" do
     redirect "/parents"
   end
+
+  
 end

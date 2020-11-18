@@ -3,12 +3,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Carter+One&family=Caveat:wght@700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Lato&family=Luckiest+Guy&family=Merienda+One&family=Permanent+Marker&family=Shadows+Into+Light&family=Ultra&display=swap" rel="stylesheet">
 
-<body id="body">
-    <h1>Create a new chore!</h1>
+<body class="new-chore-background">
+    
 
-    <form method="post" action="">
+    <form class="form1" method="post" action="">
+    <h1>Create a chore!</h1>
         <label for="name">Chore Name</label><input type="text" id="name" name="chore[name]"><br/>
-        <label for="value">Value of this Chore</label><input type="number" min="1" step="any" id="value" name="chore[value]"><br/>
+        <label for="value">Chore Value</label><input type="number" min="1" step="any" id="value" name="chore[value]"><br/>
         <input type="hidden" id="parent_id" name="chore[parent_id]" value="<%= @parent.id %>"><br/>
         <input type="hidden" id="tagged_complete" name="chore[tagged_complete]" value=0><br/>
         

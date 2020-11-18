@@ -1,0 +1,22 @@
+@media screen {
+
+    .new-child-background {
+        background-image: url(/images/shoes.jpg);
+        position:relative;
+        background-size: cover;
+        background-position: 0 35%;
+        height: 100%;
+        color: #fff;
+    }
+
+    .form1 {
+        color: black;
+        left: 50%;
+        top: 30%;
+        text-align: center;
+        position: absolute;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        -moz-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+    }
+}

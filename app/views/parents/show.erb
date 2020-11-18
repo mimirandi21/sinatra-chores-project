@@ -11,6 +11,7 @@
     <a href="/chores/new">Create a chore</a>
     <a href="/children/new">Create a child</a>
     <a href="/parents/<%= @parent.id %>/edit">Edit your account</a>
+    <a href="/logout">Logoff</a>
 
 </div>
 
@@ -22,13 +23,13 @@
 
     <% if @chores != nil %>
         <% @chores.each do |chore|%>
-            
-            <img class="avatar" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
-            <div class="container">
-            <h4><b><%= chore.name %></b></h4>
-            <p><%= chore.value%></p>
+            <div class="card1">
+            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
+            <%# <div class="container"> %>
+            <div class="item"><b><%= chore.name %></b></div>
+            <div class="item"><%= chore.value%></div>
+            <%# </div> %>
             </div>
-            
         <% end %>
     <% else %>
         <h4>Huh, looks like you don't have any current chores.  Would you like to <a href="/chores/new">create</a> some?</h4>

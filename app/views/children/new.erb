@@ -3,10 +3,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Carter+One&family=Caveat:wght@700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Lato&family=Luckiest+Guy&family=Merienda+One&family=Permanent+Marker&family=Shadows+Into+Light&family=Ultra&display=swap" rel="stylesheet">
 
-<body id="body">
-    <h1>Create a new child!</h1>
+<body class="new-child-background">
+    
 
-    <form method="post" action="/children/new">
+    <form class="form1" method="post" action="/children/new">
+    <h1>Create a new child!</h1>
         <label for="name">Child Name</label><input type="text" id="name" name="child[name]"><br/>
         <label for="password">Child's Password</label><input type="password" id="password" name="child[password]"><br/>
         <input type="hidden" id="parent_id" name="child[parent_id]" value="<% @parent.id %>"><br/>
