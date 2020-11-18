@@ -8,7 +8,7 @@
 
     <form method="post" action="">
         <label for="name">Chore Name</label><input type="text" id="name" name="chore[name]"><br/>
-        <label for="value">Value of this Chore</label><input type="number" id="value" name="chore[value]"><br/>
+        <label for="value">Value of this Chore</label><input type="number" min="1" step="any" id="value" name="chore[value]"><br/>
         <input type="hidden" id="parent_id" name="chore[parent_id]" value="<%= @parent.id %>"><br/>
         <input type="hidden" id="tagged_complete" name="chore[tagged_complete]" value=0><br/>
         

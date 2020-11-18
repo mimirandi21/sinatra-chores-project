@@ -6,7 +6,7 @@
 <body id="body">
     <h1>Create a new child!</h1>
 
-    <form method="post" action="">
+    <form method="post" action="/children/new">
         <label for="name">Child Name</label><input type="text" id="name" name="child[name]"><br/>
         <label for="password">Child's Password</label><input type="password" id="password" name="child[password]"><br/>
         <input type="hidden" id="parent_id" name="child[parent_id]" value="<% @parent.id %>"><br/>

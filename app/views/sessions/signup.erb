@@ -3,12 +3,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Carter+One&family=Caveat:wght@700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Lato&family=Luckiest+Guy&family=Merienda+One&family=Permanent+Marker&family=Shadows+Into+Light&family=Ultra&display=swap" rel="stylesheet">
 
-<body id="body">
+<body class="signup-background-image" id="body">
 <% if @message %>
     <div> <%= @message  %></div>
 <% end %>
 
-<h1>Sign up for a family account.</h1>
+<%# <h1>Sign up for a family account.</h1>
 <h5>This can only be done by a parent (Sorry, kiddos!)</h5>
     <form method="post" action="/signup">
         <label for="email">Email Address</label>
@@ -22,4 +22,23 @@
         <input type="submit" value="Create Your Account!">
     </form>
     <a href="/login_route">Log In</a>
-</body>
+</body> %>
+
+<div class="bigcard"> 
+    <div class="d-flex flex-column justify-content-between">
+        <div class="card mt-3 p-5">
+            
+            <div>
+                <p class="mb-1">Sign up for a family account.</p><br/>
+                <h4 class="mb-5 text-white">This can only be done by a parent (Sorry, kiddos!)</h4>
+            </div> <button class="btn btn-primary btn-lg"><small>Already signed up?</small><span>&nbsp;Log in</span> </button>
+        </div>
+        <div class="card two bg-white px-5 py-4 mb-3">
+            <div class="form-group"><input type="email" class="form-control" name="parent[email]" id="email" required><label class="form-control-placeholder" for="email">Email</label></div>
+            <div class="form-group"><input type="password" class="form-control" name="parent[password]" id="password" required><label class="form-control-placeholder" for="password">Password</label></div>
+            <div class="form-group"><input type="text" class="form-control" name="parent[first_name]" id="first_name" required><label class="form-control-placeholder" for="first_name">First Name</label></div>
+            <div class="form-group"><input type="text" class="form-control" name="parent[last_name]" id="last_name" required><label class="form-control-placeholder" for="last_name">Last Name</label></div>
+            <button class="btn btn-primary btn-block btn-lg mt-1 mb-2"><span>Get started<i class="fas fa-long-arrow-alt-right ml-2"></i></span></button>
+        </div>
+    </div>
+</div> 

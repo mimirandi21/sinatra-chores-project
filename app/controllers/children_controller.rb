@@ -8,8 +8,12 @@ class ChildrenController < ApplicationController
   end
 
   # POST: /children
-  post "/children" do
-    redirect "/children"
+  post "/children/new" do
+    @parent = Parent.find_by(:id =>session[:parent_id])
+    @child = Child.create(params[:child])
+    @child.parent_id = @parent.id
+    @child.save
+    redirect "/parents/#{@parent.id}"
   end
 
   # GET: /children/5
@@ -24,11 +28,13 @@ class ChildrenController < ApplicationController
 
   # PATCH: /children/5
   patch "/children/:id" do
-    redirect "/parents/show"
+    @parent = Parent.find_by(:id =>session[:parent_id])
+    redirect "/parents/#{@parent.id}"
   end
 
   # DELETE: /children/5/delete
   delete "/children/:id/delete" do
-    redirect "/parents/show"
+    @parent = Parent.find_by(:id =>session[:parent_id])
+    redirect "/parents/#{@parent.id}"
   end
 end

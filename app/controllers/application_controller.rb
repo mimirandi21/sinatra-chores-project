@@ -33,6 +33,11 @@ class ApplicationController < Sinatra::Base
       end
       
     end
+
+    #defines tagged_complete numerical values for use throughout application
+    def tags
+      
+    end
     
     # finds all todos that are incomplete and have a datetime prior to current time
     def incomplete_chores(todos)
