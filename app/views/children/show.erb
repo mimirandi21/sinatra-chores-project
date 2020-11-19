@@ -23,26 +23,67 @@
   </div>
 <% end %>
 
-    <h2>Your Chores.  Click on the check mark when this chore is complete!</h2>
-
-    <% if @chores.length != 0 %>
-        <% @chores.each do |chore|%>
+    <button onclick="myFunction()">Your Chores.  Click on the check mark when this chore is complete!</button>
+    
+    <div id="myDIV">
+    <% if @current_chores.length != 0 %>
+        <% @current_chores.each do |chore|%>
             <div class="card1">
             <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
             
             <div class="item"><b><%= chore.name %></b></div>
             <div class="item"><%= chore.value%></div>
-            <div>
-            <img class="item2" src="/images/check2.png" alt="Avatar">
+            
+            <a href="/chores/<%=chore.id%>/done1"><img class="item2" src="/images/check2.png" alt="Avatar"></a>
             <%# possibly reassign or remove from self later? %>
-            <%# <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar"></div></a> %>
+            
             </div>
         <% end %>
     <% else %>
         <h4>Huh, looks like you don't have any current chores.  Look at the available chores below to add some!</h4>
     <% end %>
+    </div>
 
-    <h2>Available Chores.  Click on the check mark to take a chore!</h2>
+    <button onclick="myFunction2()">Your completed chores</button>
+    <div id="myDIV2">
+
+    <% if @done_chores.length != 0 %>
+        <% @done_chores.each do |chore|%>
+            <div class="card1">
+            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
+            
+            <div class="item"><b><%= chore.name %></b></div>
+            <div class="item"><%= chore.value%></div>
+            
+            
+            </div>
+        <% end %>
+    <% else %>
+        <h4>Huh, looks like you don't have any done chores.  Better get to work!</h4>
+    <% end %>
+    </div>
+
+    <button onclick="myFunction3()">Your chores awaiting payment.</button>
+    
+    <div id="myDIV3">
+    <% if @payme_chores.length != 0 %>
+        <% @payme_chores.each do |chore|%>
+            <div class="card1">
+            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
+            
+            <div class="item"><b><%= chore.name %></b></div>
+            <div class="item"><%= chore.value%></div>
+            
+            
+            </div>
+        <% end %>
+    <% else %>
+        <h4>Looks like you are all paid up!</h4>
+    <% end %>
+    </div>
+
+    <button onclick="myFunction4()">Available Chores.  Click on the check mark to take a chore!</button>
+    <div id="myDIV4">
 
     <% if @available_chores.length != 0 %>
         <% @available_chores.each do |chore|%>
@@ -52,14 +93,47 @@
             <div class="item"><b><%= chore.name %></b></div>
             <div class="item"><%= chore.value%></div>
             
-            <img class="item2" src="/images/check2.png" alt="Avatar">
+            <a href="/chores/<%= chore.id %>/take"><img class="item2" src="/images/check2.png" alt="Avatar"></a>
             
             </div>
         <% end %>
     <% else %>
         <h4>Huh, there aren't any chores available now.  Check back later!</h4>
     <% end %>
-
+    </div>
 
     </div>
+
+    <script>function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function myFunction2() {
+  var x = document.getElementById("myDIV2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function myFunction3() {
+  var x = document.getElementById("myDIV3");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function myFunction4() {
+  var x = document.getElementById("myDIV4");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}</script>
 </body>

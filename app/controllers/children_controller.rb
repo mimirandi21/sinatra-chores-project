@@ -29,7 +29,9 @@ class ChildrenController < ApplicationController
   get "/children/:id" do
     @child = Child.find_by_id(session[:child_id])
     @chores = Chore.where(:child_id => session[:child_id])
-    
+    @current_chores = @chores.where(:tagged_complete => 1)
+    @done_chores = @chores.where(:tagged_complete => 2)
+    @payme_chores = @chores.where(:tagged_complete => 3)
     @available_chores = Chore.where(:parent_id => @child.parent_id)
     @available_chores = @available_chores.where(:child_id => nil)
     

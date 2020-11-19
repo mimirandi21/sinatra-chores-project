@@ -17,6 +17,11 @@ class ParentsController < ApplicationController
   # GET: /parents/5
   get "/parents/:id" do
     @chores = Chore.where(:parent_id => session[:parent_id])
+    @current_chores = @chores.where(:tagged_complete => 0)
+    @taken_chores = @chores.where(:tagged_complete => 1)
+    @approve_chores = @chores.where(:tagged_complete => 2)
+    @done_chores = @chores.where(:tagged_complete => 4)
+    @payme_chores = @chores.where(:tagged_complete => 3)
     @children = Child.where(:parent_id => session[:parent_id])
     
     @parent = Parent.find_by_id(session[:parent_id])

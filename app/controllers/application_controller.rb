@@ -36,6 +36,13 @@ class ApplicationController < Sinatra::Base
 
     #defines tagged_complete numerical values for use throughout application
     def tags
+      if tagged_complete == 1
+        return "not complete"
+      elsif tagged_complete == 2
+        return "chore complete by child. pending your approval."
+      elsif tagged_complete == 3
+        return "approved.  pending payment."
+      end
       
     end
     
