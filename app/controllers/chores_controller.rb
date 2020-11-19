@@ -6,7 +6,6 @@ class ChoresController < ApplicationController
 
   # GET: /chores/new
   get "/chores/new" do
-    
     @parent = Parent.find_by(:id =>session[:parent_id])
     erb :"/chores/new"
   end

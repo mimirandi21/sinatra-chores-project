@@ -23,7 +23,7 @@
   </div>
 <% end %>
 
-    <h2>Your Chores</h2>
+    <h2>Your Chores.  Click on the check mark when this chore is complete!</h2>
 
     <% if @chores.length != 0 %>
         <% @chores.each do |chore|%>
@@ -34,15 +34,15 @@
             <div class="item"><%= chore.value%></div>
             <div>
             <img class="item2" src="/images/check2.png" alt="Avatar">
-            <a href="/chores/<%= chore.id %>/edit"><img class="item2" src="/images/pencil2.png" alt="Avatar"></a>
-            <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar"></div></a>
+            <%# possibly reassign or remove from self later? %>
+            <%# <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar"></div></a> %>
             </div>
         <% end %>
     <% else %>
         <h4>Huh, looks like you don't have any current chores.  Look at the available chores below to add some!</h4>
     <% end %>
 
-    <h2>Available Chores</h2>
+    <h2>Available Chores.  Click on the check mark to take a chore!</h2>
 
     <% if @available_chores.length != 0 %>
         <% @available_chores.each do |chore|%>

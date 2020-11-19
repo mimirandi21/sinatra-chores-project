@@ -31,6 +31,8 @@ class ChildrenController < ApplicationController
     @chores = Chore.where(:child_id => session[:child_id])
     
     @available_chores = Chore.where(:parent_id => @child.parent_id)
+    @available_chores = @available_chores.where(:child_id => nil)
+    
     erb :"/children/show"
   end
 
