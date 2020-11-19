@@ -4,8 +4,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Carter+One&family=Caveat:wght@700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Lato&family=Luckiest+Guy&family=Merienda+One&family=Permanent+Marker&family=Shadows+Into+Light&family=Ultra&display=swap" rel="stylesheet">
 
-<body class="self-edit-background">
-
+<body class="edit-background">
+    
 
     <form class="form" method="post" action="/parents/<%= @parent.id %>">
     <h1>Edit your account</h1>
@@ -15,7 +15,8 @@
         <label for="first_name">First Name  </label><input type="text" id="first_name" name="parent[first_name]" value="<%= @parent.first_name %>"><br/>
         <label for="last_name">Last Name  </label><input type="text" id="last_name" name="parent[last_name]" value="<%= @parent.last_name %>"><br/>
         <input type="submit" value="Edit Your Account!">
-        <a href="/parents/<%= @parent.id %>/delete"><img class="item3" src="/images/delete.png" alt="Avatar"></div></a>
-    </form>
 
+        <button class="delete-btn"><a class="delete-cancel" href="/parents/<%= @parent.id %>/delete">Delete Your Account</a></button>
+    </form>
+    
 </body>

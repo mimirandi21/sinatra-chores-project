@@ -39,6 +39,7 @@ class ChoresController < ApplicationController
     @chore = Chore.find(params[:id])
     erb :"/chores/delete"
   end
+  
   # DELETE: /chores/5/delete
   delete "/chores/:id" do
     @parent = Parent.find_by(:id =>session[:parent_id])

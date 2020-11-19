@@ -4,6 +4,7 @@ require 'rack-flash'
 class ChildrenController < ApplicationController
 
   
+
   # GET: /children/new
   get "/children/new" do
     @parent = Parent.find_by(:id =>session[:parent_id])
@@ -14,7 +15,7 @@ class ChildrenController < ApplicationController
   post "/children/new" do
     @parent = Parent.find_by(:id =>session[:parent_id])
     @child = Child.create(params[:child])
-    binding.pry
+    
     redirect "/parents/#{@parent.id}"
   end
 
@@ -23,6 +24,14 @@ class ChildrenController < ApplicationController
     @child = Child.find_by_id(params[:id])
     @parent = Parent.find_by(:id =>session[:parent_id])
     erb :"/children/edit"
+  end
+
+  get "/children/:id" do
+    @child = Child.find_by_id(session[:child_id])
+    @chores = Chore.where(:child_id => session[:child_id])
+    
+    @available_chores = Chore.where(:parent_id => @child.parent_id)
+    erb :"/children/show"
   end
 
   # PATCH: /children/5

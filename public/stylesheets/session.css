@@ -138,12 +138,16 @@ h4.mb-5 {
 .btn-primary {
     border: none;
     background: #f5b461;
-    margin-bottom: 60px
+    margin-bottom: 60px;
+    width: 100%;
 }
 .btn-primary small {
   color: #f5f1de;
 }
 
+a .button-primary {
+  width:100%;
+}
 .btn-primary span {
   font-size: 13px
 }

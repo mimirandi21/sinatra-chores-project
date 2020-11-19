@@ -3,17 +3,19 @@ require 'rack-flash'
 
 class SessionsController < ApplicationController
     get '/signup' do 
-        @message = session[:message]
-        session[:message] = nil
-        erb :'/sessions/signup'
+        if logged_in?
+            @message = "You are already logged in"
+        else
+            @message = session[:message]
+            session[:message] = nil
+            erb :'/sessions/signup'
+        end
     end
 
     post '/signup' do
         @parent = Parent.new(params[:parent])
-        if has_account
-            session[:message] = "Oops, looks like you already have an account."
-            redirect to '/login'
-        elsif !@parent.save
+        
+        if !@parent.save
             session[:message] = "Hmmm... there must have been a typo.  Please try again."
             redirect to '/signup'
             
@@ -46,7 +48,9 @@ class SessionsController < ApplicationController
 
         if @parent && @parent.authenticate(params[:parent][:password])
             session[:parent_id] = @parent.id
+            
             redirect to "/parents/#{current_user.id}"
+            
         else
             @message = "Wrong Email or Password"
             erb :'/sessions/parents_login'
@@ -55,13 +59,14 @@ class SessionsController < ApplicationController
     end
 
     post '/children_login' do
-        child = Child.find_by(email: params[:child]["name"])
+        child = Child.find_by(name: params[:child][:name])
+        
         if child && child.authenticate(params[:child][:password])
             session[:child_id] = child.id
             redirect to "/children/#{current_user.id}"
         else
             @message = "Oops, try again!"
-            erb :'/children_login'
+            erb :'sessions/children_login'
         end
 
     end

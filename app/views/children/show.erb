@@ -1,20 +1,15 @@
-<link rel="stylesheet" href="/stylesheets/parent.css" />
+<link rel="stylesheet" href="/stylesheets/child.css"/>
 <link rel="stylesheet" href="/stylesheets/main.css" />
 
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Carter+One&family=Caveat:wght@700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Lato&family=Luckiest+Guy&family=Merienda+One&family=Permanent+Marker&family=Shadows+Into+Light&family=Ultra&display=swap" rel="stylesheet">
 
-<% if @message %>
-    <div><%= @message  %></div>
-  <% end %>
 
 <body id="body">
 <!-- Side navigation -->
 <div class="sidenav">
-    <h2 class="centertext">Hello, <%= @parent.first_name %>!</h2><br/>
-    <a href="/chores/new">Create a chore</a>
-    <a href="/children/new">Create a child</a>
-    <a href="/parents/<%= @parent.id %>/edit">Edit your account</a>
+    <h2 class="centertext">Hello, <%= @child.name %>!</h2><br/>
+    
     <a href="/logout">Logoff</a>
 
 </div>
@@ -23,18 +18,18 @@
 <div class="main">
 
     <% if flash[:message] %>
-    <div id="flash-message">
+  <div id="flash-message">
     <%= flash[:message] %>
-    </div>
-    <% end %>
-    
-    <h2>Chores</h2>
+  </div>
+<% end %>
+
+    <h2>Your Chores</h2>
 
     <% if @chores.length != 0 %>
         <% @chores.each do |chore|%>
             <div class="card1">
             <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
-            <%# <div class="container"> %>
+            
             <div class="item"><b><%= chore.name %></b></div>
             <div class="item"><%= chore.value%></div>
             <div>
@@ -44,26 +39,25 @@
             </div>
         <% end %>
     <% else %>
-        <h4>Huh, looks like you don't have any current chores.  Would you like to <a href="/chores/new">create</a> some?</h4>
+        <h4>Huh, looks like you don't have any current chores.  Look at the available chores below to add some!</h4>
     <% end %>
 
-    <h2>Children</h2>
+    <h2>Available Chores</h2>
 
-    <% if @children.length != 0 %>
-        <% @children.each do |child|%>
+    <% if @available_chores.length != 0 %>
+        <% @available_chores.each do |chore|%>
             <div class="card1">
             <img class="item1" src="/images/tiny-child.png" alt="Avatar" style="width:5%">
-            <%# <div class="container"> %>
-            <div class="item"><b><%= child.name %></b></div>
-            <div class="item"><%= child.balance%></div>
-            <div>
+            
+            <div class="item"><b><%= chore.name %></b></div>
+            <div class="item"><%= chore.value%></div>
+            
             <img class="item2" src="/images/check2.png" alt="Avatar">
-            <a href="/children/<%= child.id %>/edit"><img class="item2" src="/images/pencil2.png" alt="Avatar"></a>
-            <a href="/children/<%= child.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar"></div></a>
+            
             </div>
         <% end %>
     <% else %>
-        <h4>Huh, looks like you don't have any children.  Would you like to <a href="/children/new">add</a> one?</h4>
+        <h4>Huh, there aren't any chores available now.  Check back later!</h4>
     <% end %>
 
 

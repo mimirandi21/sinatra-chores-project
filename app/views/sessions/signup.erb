@@ -5,7 +5,7 @@
 
 <body class="signup-background-image" id="body">
 <% if @message %>
-    <div> <%= @message  %></div>
+    <div class="alert"> <%= @message  %></div>
 <% end %>
 
 <%# <h1>Sign up for a family account.</h1>
@@ -31,7 +31,8 @@
             <div>
                 <p class="mb-1">Sign up for a family account.</p><br/>
                 <h4 class="mb-5 text-white">This can only be done by a parent (Sorry, kiddos!)</h4>
-            </div> <button class="btn btn-primary btn-lg"><small>Already signed up?</small><span>&nbsp;Log in</span> </button>
+            </div><a href="/login_route"><button formaction="/login_route" class="btn btn-primary btn-lg"><small>Already signed up?</small><span>&nbsp;Log in</span> </button></a>
+            
         </div>
         
         <form method="post" action="/signup" class="card two bg-white px-5 py-4 mb-3">

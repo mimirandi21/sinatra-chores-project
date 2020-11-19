@@ -29,14 +29,10 @@ class ApplicationController < Sinatra::Base
       @current_user ||= Parent.find_by(id: session[:parent_id]) || @current_user ||= Child.find_by(id: session[:child_id])
     end
 
-    def has_account
-      if Parent.all.each{|parent| parent.email == @parent.email} == true
-        true
-      else
-        false
-      end
+    
       
-    end
+      
+    
 
     #defines tagged_complete numerical values for use throughout application
     def tags
