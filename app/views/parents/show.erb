@@ -37,9 +37,9 @@
                 <div class="item"><b><%= child.name %></b></div>
                 <div class="item">Balance: $<%= child.balance.to_i%></div>
             <div>
-            <a href="/children/<%= child.id %>/pay"><img class="item2" src="/images/monies.png" alt="Avatar">
-            <a href="/children/<%= child.id %>/edit"><img class="item2" src="/images/pencil2.png" alt="Avatar"></a>
-            <a href="/children/<%= child.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar"></div></a>
+            <a href="/children/<%= child.id %>/pay"><img class="item2" src="/images/monies.png" alt="Avatar" style="height:40px" style="width:auto">
+            <a href="/children/<%= child.id %>/edit"><img class="item2" src="/images/pencil2.png" alt="Avatar" style="height:30px" style="width:auto"></a>
+            <a href="/children/<%= child.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar" style="height:30px" style="width:auto"></div></a>
             </div>
 
         <% end %>
@@ -60,8 +60,8 @@
             <div class="item">Value: $<%= chore.value%></div>
             <div>
             
-            <a href="/chores/<%= chore.id %>/edit"><img class="item2" src="/images/pencil2.png" alt="Avatar"></a>
-            <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar"></div></a>
+            <a href="/chores/<%= chore.id %>/edit"><img class="item2" src="/images/pencil2.png" alt="Avatar" style="height:30px" style="width:auto"></a>
+            <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar" style="height:30px" style="width:auto"></div></a>
             </div>
         <% end %>
     <% else %>
@@ -75,10 +75,10 @@
         <% @taken_chores.each do |chore|%>
             <div class="card1">
             <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
-            
-            <div class="item"><b><%= chore.name %></b></div>
+            <div class="item"><b><%= chore.child.name %></b></div>
+            <div class="item"><%= chore.name %></div>
             <div class="item">Value: $<%= chore.value %></div>
-            <div class="item"><%= chore.child.name %></div>
+            
             </div>
             <% end %>
     <% else %>
@@ -97,11 +97,12 @@
             <div class="card1">
             <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
             <%# <div class="container"> %>
-            <div class="item"><b><%= chore.name %></b></div>
+            <div class="item"><b><%= chore.child.name %></b></div>
+            <div class="item"><%= chore.name %></div>
             <div class="item">Value: $<%= chore.value %></div>
-            <div class="item"><%= chore.child.name %></div>
+            
             <div>
-            <a href="/chores/<%=chore.id %>/done2"><img class="item2" src="/images/check2.png" alt="Avatar"></a>
+            <a href="/chores/<%=chore.id %>/done2"><img class="item2" src="/images/check2.png" alt="Avatar" style="height:40px" style="width:auto"></a>
             </div>
             </div>
         <% end %>
@@ -119,12 +120,13 @@
             <div class="card1">
             <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
             <%# <div class="container"> %>
-            <div class="item"><b><%= chore.name %></b></div>
+            <div class="item"><b><%= chore.child.name%></b></div>
+            <div class="item"><%= chore.name %></div>
             <div class="item">Value: $<%= chore.value%></div>
-            <div class="item"><%= chore.child.name%></div>
+            
             <div>
             
-            <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar"></div></a>
+            <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar" style="height:30px" style="width:auto"></div></a>
             </div>
         <% end %>
     <% else %>

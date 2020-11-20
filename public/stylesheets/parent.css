@@ -132,7 +132,7 @@
   }
   
   img.item2 {
-    max-width: 30px;
+    
     margin: 10px;
     margin-top: 20px;
   }
@@ -144,6 +144,18 @@
     margin-left: 40px;
   }
 
+  
+  label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 180px;
+    text-align: right;
+}
+input {
+  display: inline-block;
+  float: left;
+}
   .linkme {
     color: #a35d6a;
   }
@@ -171,7 +183,7 @@
     padding:4px 10px;
     text-decoration:none;
     text-shadow:0px 1px 0px #e1e2ed;
-    margin: 0 10px;
+    
   }
   
   .my-other-button:hover {
@@ -181,6 +193,35 @@
   }
   
   .my-other-button:active {
+    position:relative;
+    top:1px;
+  }
+
+  .my-other-button2 {
+    box-shadow: 3px 4px 0px 0px #899599;
+    background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    color:black;
+    border-radius:15px;
+    border:1px solid #d6bcd6;
+    display:inline-block;
+    cursor:pointer;
+    font-family:Arial;
+    font-size:17px;
+    font-weight:bold;
+    padding:4px 10px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+    margin-top: 20px;
+    margin-left: 65px;
+  }
+  
+  .my-other-button2:hover {
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color:#bab1ba;
+    color: black;
+  }
+  
+  .my-other-button2:active {
     position:relative;
     top:1px;
   }

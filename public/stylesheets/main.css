@@ -151,6 +151,8 @@
   .centertext {
     text-align: center;
   }
+
+  
 }
 
 @media screen and (max-width: 600px) {
@@ -182,6 +184,8 @@
     font-size: 18px;
     line-height: 24px;
   }
+
+
 }
 
 
