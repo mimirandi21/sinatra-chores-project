@@ -28,36 +28,36 @@
     </div>
     <% end %>
 
-    <button onclick="myFunction2()">Children</button>
+    <button class="myBigButton" onclick="myFunction2()">Children</button>
     <div id="myDIV2">
     <% if @children.length != 0 %>
         <% @children.each do |child|%>
             <div class="card1">
-                <img class="item1" src="/images/tiny-child.png" alt="Avatar" style="width:5%">
+                <img class="item1" src="/images/tiny-child.png" alt="Avatar" style="height:70px" style="width:auto">
                 <div class="item"><b><%= child.name %></b></div>
-                <div class="item"><%= child.balance%></div>
+                <div class="item">Balance: $<%= child.balance.to_i%></div>
             <div>
-            <img class="item2" src="/images/check2.png" alt="Avatar">
+            <a href="/children/<%= child.id %>/pay"><img class="item2" src="/images/monies.png" alt="Avatar">
             <a href="/children/<%= child.id %>/edit"><img class="item2" src="/images/pencil2.png" alt="Avatar"></a>
             <a href="/children/<%= child.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar"></div></a>
             </div>
 
         <% end %>
     <% else %>
-        <h4>Huh, looks like you don't have any children.  Would you like to <a href="/children/new">add</a> one?</h4>
+        <h4>Huh, looks like you don't have any children.  Would you like to <a class="linkme" href="/children/new">add</a> one?</h4>
     <% end %>
 </div>
-
-    <button onclick="myFunction()">Chores not yet taken</button>
+<br/>
+    <button class="myBigButton" onclick="myFunction()">Chores not yet taken</button>
     
     <div id="myDIV">
     <% if @current_chores.length != 0 %>
         <% @current_chores.each do |chore|%>
             <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
+            <img class="item1" src="/images/tiny-broom.png" alt="Avatar"style="height:65px" style="width:auto">
             <%# <div class="container"> %>
             <div class="item"><b><%= chore.name %></b></div>
-            <div class="item"><%= chore.value%></div>
+            <div class="item">Value: $<%= chore.value%></div>
             <div>
             
             <a href="/chores/<%= chore.id %>/edit"><img class="item2" src="/images/pencil2.png" alt="Avatar"></a>
@@ -65,21 +65,21 @@
             </div>
         <% end %>
     <% else %>
-        <h4>Huh, looks like you don't have any current chores.  Would you like to <a href="/chores/new">create</a> some?</h4>
+        <h4>Huh, looks like you don't have any current chores.  Would you like to <a class="linkme" href="/chores/new">create</a> some?</h4>
     <% end %>
     </div>
-
-    <button onclick="myFunction3()">Taken Chores</button>
+<br/>
+    <button class="myBigButton" onclick="myFunction3()">Taken Chores</button>
     <div id="myDIV3">
     <% if @taken_chores.length != 0 %>
         <% @taken_chores.each do |chore|%>
             <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
-            <%# <div class="container"> %>
-            <div class="item"><b><%= chore.name %></b></div>
-            <div class="item"><%= chore.value %></div>
-            <div class="item"><%= chore.child_id %></div>
+            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
             
+            <div class="item"><b><%= chore.name %></b></div>
+            <div class="item">Value: $<%= chore.value %></div>
+            <div class="item"><%= chore.child.name %></div>
+            </div>
             <% end %>
     <% else %>
         <h4>Looks like there's nothing here right now.</h4>
@@ -88,21 +88,21 @@
     
     </div>
 
-    
-    <button onclick="myFunction6()">Chores awaiting your approval</button>
+    <br/>
+    <button class="myBigButton" onclick="myFunction6()">Chores awaiting your approval</button>
     
     <div id="myDIV6">
     <% if @approve_chores.length != 0 %>
         <% @approve_chores.each do |chore|%>
             <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
+            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
             <%# <div class="container"> %>
             <div class="item"><b><%= chore.name %></b></div>
-            <div class="item"><%= chore.value %></div>
-            <div class="item"><%= chore.child_id %></div>
+            <div class="item">Value: $<%= chore.value %></div>
+            <div class="item"><%= chore.child.name %></div>
             <div>
             <a href="/chores/<%=chore.id %>/done2"><img class="item2" src="/images/check2.png" alt="Avatar"></a>
-            
+            </div>
             </div>
         <% end %>
     <% else %>
@@ -110,38 +110,18 @@
     <% end %>
     </div>
 
-    <button onclick="myFunction5()">Chores awaiting payment</button>
-    
-    <div id="myDIV5">
-    <% if @payme_chores.length != 0 %>
-        <% @payme_chores.each do |chore|%>
-            <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
-            <%# <div class="container"> %>
-            <div class="item"><b><%= chore.name %></b></div>
-            <div class="item"><%= chore.value%></div>
-            <div class="item"><%= chore.child_id%></div>
-            <div>
-            <a href="/chores/<%=chore.id %>/done3"><img class="item2" src="/images/check2.png" alt="Avatar"></a>
-            
-            </div>
-        <% end %>
-    <% else %>
-        <h4>Looks like you are all paid up!</h4>
-    <% end %>
-    </div>
-
-    <button onclick="myFunction4()">Completed chores</button>
+<br/>
+    <button class="myBigButton" onclick="myFunction4()">Completed chores</button>
     
     <div id="myDIV4">
     <% if @done_chores.length != 0 %>
         <% @done_chores.each do |chore|%>
             <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
+            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
             <%# <div class="container"> %>
             <div class="item"><b><%= chore.name %></b></div>
-            <div class="item"><%= chore.value%></div>
-            <div class="item"><%= chore.child_id%></div>
+            <div class="item">Value: $<%= chore.value%></div>
+            <div class="item"><%= chore.child.name%></div>
             <div>
             
             <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar"></div></a>

@@ -7,14 +7,14 @@
     <h1>Make edits to <%= @child.name %></h1>
 
     <form class="form" method="post" action="/children/<%= @child.id %>">
-    <h1>Make edits to <%= @child.name %></h1>
+    <h1>Make edits to <%= @child.name %></h1><br/>
         <input id="hidden" type="hidden" name="_method" value="patch">
         <label for="name">Child Name</label><input type="text" id="name" name="child[name]" value="<%= @child.name %>"><br/>
         <label for="password">Child's Password</label><input type="password" id="password" name="child[password]" value="<%= @child.password %>"><br/>
-        <label for="balance">Child's Balance</label><input type="number" id="balance" name="child[balance]" value="<%= @child.balance %>"><br/>
+        
         <input type="hidden" id="parent_id" name="child[parent_id]" value="<%= @parent.id %>"><br/>
         
         
-        <input type="submit" value="Edit <%= @child.name %>!">
+        <input class="myBigButton" type="submit" value="Edit <%= @child.name %>!">
     </form>
 </body>

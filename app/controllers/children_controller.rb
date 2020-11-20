@@ -19,6 +19,14 @@ class ChildrenController < ApplicationController
     redirect "/parents/#{@parent.id}"
   end
 
+  get "/children/:id/pay" do
+    @parent = Parent.find_by(:id =>session[:parent_id])
+    child = Child.find_by_id(params[:id])
+    child.balance = 0
+    child.save
+    redirect "/parents/#{@parent.id}"
+  end
+
   # GET: /children/5/edit
   get "/children/:id/edit" do
     @child = Child.find_by_id(params[:id])

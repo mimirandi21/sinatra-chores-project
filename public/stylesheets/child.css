@@ -1,23 +1,92 @@
 @media screen {
 
+  #newButton {
+    box-shadow: 3px 4px 0px 0px #8d7052;
+    background:linear-gradient(to bottom, #8d7052 5%, #dab38a 100%);
+    color:black;
+    border-radius:15px;
+    border:1px solid #d6bcd6;
+    display:inline-block;
+    cursor:pointer;
+    background-color:#8d7052;
+    font-family:Arial;
+    font-size:17px;
+    font-weight:bold;
+    padding:7px 40px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+  }
+
+  #newButton:hover {
+    background:linear-gradient(to bottom, #dab38a 5%, #8d7052 100%);
+    background-color:#dab38a;
+  }
+
+  #newButton:active {
+    position:relative;
+    top:1px;
+  }
+
   .card1 {
     /* Add shadows to create the "card" effect */
     display: flex;
     justify-content: space-between;
     align-content: space-between;
-    
+    background-color: #ebf5f3;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
   }
 
   /* On mouse-over, add a deeper shadow */
-  .card:hover {
+  .card1:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
   /* Add some padding inside the card container */
   .container {
     padding: 2px 16px;
+  }
+
+  .delete-background {
+    background-image: url(/images/goodbye.jpg);
+    position:relative;
+    background-size: cover;
+    background-position: 0 35%;
+    height: 100%;
+    color: #fff;
+  }
+
+  .delete-form  {
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .child-delete-button {
+    box-shadow: 3px 4px 0px 0px #899599;
+    background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    color:black;
+    border-radius:15px;
+    border:1px solid #d6bcd6;
+    display:inline-block;
+    cursor:pointer;
+    font-family:Arial;
+    font-size:17px;
+    font-weight:bold;
+    padding:7px 30px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+    margin: 0 10px;
+  }
+  
+  .child-delete-button:hover {
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color:#bab1ba;
+    color: black;
+  }
+  
+  .child-delete-button:active {
+    position:relative;
+    top:1px;
   }
 
   .edit-background {
@@ -93,6 +162,32 @@
     padding: 20px 10px;
   }
 
+  .myBigButton {
+    box-shadow: 3px 4px 0px 0px #84a9ac;
+    background:linear-gradient(to bottom, #84a9ac 5%, #ebf5f3 100%);
+    color:black;
+    border-radius:15px;
+    border:.5px solid black;
+    display:inline-block;
+    cursor:pointer;
+    background-color:#84a9ac;
+    font-family:Arial;
+    font-size:17px;
+    font-weight:bold;
+    padding:7px 76px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+  }
+  .myBigButton:hover {
+    background:linear-gradient(to bottom, #3a8a9e 5%, #3a8a9e 100%);
+    background-color:#3a8a9e;
+  }
+  .myBigButton:active {
+    position:relative;
+    top:1px;
+  }
+  }
+
   .new-child-background {
     background-image: url(/images/shoes.jpg);
     position:relative;
@@ -101,6 +196,8 @@
     height: 100%;
     color: #fff;
   }
+
+  
 
   .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -127,5 +224,6 @@
   .sidenav a:hover {
     color: #f1f1f1;
   }
+  
   
 }

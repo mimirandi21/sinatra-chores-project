@@ -9,6 +9,7 @@
 <!-- Side navigation -->
 <div class="sidenav">
     <h2 class="centertext">Hello, <%= @child.name %>!</h2><br/>
+    <h4 class="centertext">Your current balance is $<%= @child.balance.to_i %>.</h4>
     
     <a href="/logout">Logoff</a>
 
@@ -23,37 +24,37 @@
   </div>
 <% end %>
 
-    <button onclick="myFunction()">Your Chores.  Click on the check mark when this chore is complete!</button>
+    <button class="myBigButton" onclick="myFunction()">Your Chores.  Click on the check mark when this chore is complete!</button>
     
     <div id="myDIV">
     <% if @current_chores.length != 0 %>
         <% @current_chores.each do |chore|%>
             <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
+            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
             
             <div class="item"><b><%= chore.name %></b></div>
-            <div class="item"><%= chore.value%></div>
-            
-            <a href="/chores/<%=chore.id%>/done1"><img class="item2" src="/images/check2.png" alt="Avatar"></a>
+            <div class="item">Value: $<%= chore.value%></div>
+            <div>
+            <a href="/chores/<%=chore.id%>/done1"><img class="item2" src="/images/check2.png" alt="Avatar" style="height:70px" style="width:auto"></a>
             <%# possibly reassign or remove from self later? %>
-            
+            </div>
             </div>
         <% end %>
     <% else %>
         <h4>Huh, looks like you don't have any current chores.  Look at the available chores below to add some!</h4>
     <% end %>
     </div>
-
-    <button onclick="myFunction2()">Your completed chores</button>
+    <br/>
+    <button class="myBigButton" onclick="myFunction2()">Your completed chores</button>
     <div id="myDIV2">
 
     <% if @done_chores.length != 0 %>
         <% @done_chores.each do |chore|%>
             <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
+            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
             
             <div class="item"><b><%= chore.name %></b></div>
-            <div class="item"><%= chore.value%></div>
+            <div class="item">Value: $<%= chore.value%></div>
             
             
             </div>
@@ -62,39 +63,21 @@
         <h4>Huh, looks like you don't have any done chores.  Better get to work!</h4>
     <% end %>
     </div>
-
-    <button onclick="myFunction3()">Your chores awaiting payment.</button>
+    <br/>
     
-    <div id="myDIV3">
-    <% if @payme_chores.length != 0 %>
-        <% @payme_chores.each do |chore|%>
-            <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="width:5%">
-            
-            <div class="item"><b><%= chore.name %></b></div>
-            <div class="item"><%= chore.value%></div>
-            
-            
-            </div>
-        <% end %>
-    <% else %>
-        <h4>Looks like you are all paid up!</h4>
-    <% end %>
-    </div>
-
-    <button onclick="myFunction4()">Available Chores.  Click on the check mark to take a chore!</button>
+    <button class="myBigButton" onclick="myFunction4()">Available Chores.  Click on the check mark to take a chore!</button>
     <div id="myDIV4">
 
     <% if @available_chores.length != 0 %>
         <% @available_chores.each do |chore|%>
             <div class="card1">
-            <img class="item1" src="/images/tiny-child.png" alt="Avatar" style="width:5%">
+            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
             
             <div class="item"><b><%= chore.name %></b></div>
-            <div class="item"><%= chore.value%></div>
-            
-            <a href="/chores/<%= chore.id %>/take"><img class="item2" src="/images/check2.png" alt="Avatar"></a>
-            
+            <div class="item">Value: $<%= chore.value%></div>
+            <div>
+            <a href="/chores/<%= chore.id %>/take"><img class="item2" src="/images/check2.png" alt="Avatar" style="height:70px" style="width:auto"></a>
+            </div>
             </div>
         <% end %>
     <% else %>

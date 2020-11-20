@@ -50,6 +50,10 @@ class ParentsController < ApplicationController
   # DELETE: /parents/5/delete
   delete "/parents/:id" do
     parent = Parent.find_by_id(params[:id])
+    children = Child.where(:parent_id => params[:id])
+    chores = Child.where(:parent_id => params[:id])
+    children.destroy_all
+    chores.destroy_all
     parent.destroy
     redirect "/"
   end

@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20201116225426) do
     t.string  "name"
     t.integer "parent_id"
     t.integer "child_id"
-    t.float   "value"
+    t.integer "value"
     t.integer "tagged_complete"
   end
 

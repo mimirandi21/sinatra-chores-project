@@ -25,9 +25,11 @@ class ChoresController < ApplicationController
   get "/chores/:id/done2" do
     @parent = Parent.find_by(:id => session[:parent_id])
     @chore = Chore.find_by_id(params[:id])
-    @chore.tagged_complete = 3.to_int
+    @child = Child.find_by(:id => @chore.child_id)
+    @chore.tagged_complete = 4.to_int
+    @child.balance += @chore.value
     @chore.save
-    
+    @child.save
     redirect "/parents/#{@parent.id}"
   end
 
@@ -36,9 +38,10 @@ class ChoresController < ApplicationController
     @chore = Chore.find_by_id(params[:id])
     @child = Child.find_by(:id => @chore.child_id)
     @chore.tagged_complete = 4.to_int
-    @child.balance + @chore.value
+    @child.balance += @chore.value
     @chore.save
-    binding.pry
+    @child.save
+    
     redirect "/parents/#{@parent.id}"
   end
 

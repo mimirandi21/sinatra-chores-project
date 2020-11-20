@@ -7,17 +7,16 @@
   }
 
   html, body {
-    
     height: 100%;
     width: 100%;
   }
 
   footer{
     position:fixed;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
   }
 
   .form {
@@ -124,15 +123,18 @@
     text-decoration:none;
     text-shadow:0px 1px 0px grey;
   }
+
   .myButton:hover {
     background:linear-gradient(to bottom, #d9455f 5%, #e47e91 100%);
     background-color:#d9455f;
     color: black;
   }
+
   .myButton:active {
     position:relative;
     top:1px;
   }
+
   .centered {
     position: absolute;
     top: 30%;
@@ -140,16 +142,15 @@
     transform: translate(-50%, -50%);
     color: black;
     font-family: 'Architects Daughter', cursive;
-    
   }
   
-    .formclass {
-      text-align: center;
-    }
+  .formclass {
+    text-align: center;
+  }
   
-    .centertext {
-      text-align: center;
-    }
+  .centertext {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 600px) {

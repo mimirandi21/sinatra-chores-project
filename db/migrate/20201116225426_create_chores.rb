@@ -4,7 +4,7 @@ class CreateChores < ActiveRecord::Migration
       t.string :name
       t.integer :parent_id
       t.integer :child_id, null: true
-      t.float :value 
+      t.integer :value 
       t.integer :tagged_complete
       
     end

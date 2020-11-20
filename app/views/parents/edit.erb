@@ -7,16 +7,16 @@
 <body class="edit-background">
     
 
-    <form class="form" method="post" action="/parents/<%= @parent.id %>">
+    <form class="form2" method="post" action="/parents/<%= @parent.id %>">
     <h1>Edit your account</h1>
         <input id="hidden" type="hidden" name="_method" value="patch">
         <label for="email">Email Address  </label><input type="email" id="email" name="parent[email]" value="<%= @parent.email %>"><br/>
         <label for="password">Password  </label><input type="password" id="password" name="parent[password]"><br/>
         <label for="first_name">First Name  </label><input type="text" id="first_name" name="parent[first_name]" value="<%= @parent.first_name %>"><br/>
         <label for="last_name">Last Name  </label><input type="text" id="last_name" name="parent[last_name]" value="<%= @parent.last_name %>"><br/>
-        <input type="submit" value="Edit Your Account!">
+        <input class="my-other-button" type="submit" value="Edit Your Account!">
 
-        <button class="delete-btn"><a class="delete-cancel" href="/parents/<%= @parent.id %>/delete">Delete Your Account</a></button>
+        <a class="my-other-button" href="/parents/<%= @parent.id %>/delete">Delete Your Account</a>
     </form>
     
 </body>

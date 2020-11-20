@@ -1,57 +1,133 @@
 @media screen {
 
-    .new-chore-background {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url(/images/cleaning.jpg);
-        position:relative;
-        background-size: cover;
-        background-position: 0 80%;
-        height: 100%;
-        color: #fff;
-    }
+  .delete-background {
+    background-image: url(/images/eraser.jpg);
+    position:relative;
+    background-size: cover;
+    background-position: 0 35%;
+    height: 100%;
+    color: #fff;
+}
 
-    .form {
-        color:white;
-        left: 50%;
-        top: 50%;
-        text-align: center;
-        position: absolute;
-        -webkit-transform: translate3d(-50%, -50%, 0);
-        -moz-transform: translate3d(-50%, -50%, 0);
-        transform: translate3d(-50%, -50%, 0);
-        border: 10px;
-        
-      }
-      .edit-background {
-        position: relative; 
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: black;
-    }
-      .edit-background::before {
-        content: "";
-          background-image: url(/images/pencils.jpg);
-          background-size: cover;
-          position: absolute;
-          top: 0px;
-          right: 0px;
-          bottom: 0px;
-          left: 0px;
-          opacity: 0.75;
-          
-        ;
-    }
-    .form1 {
-        color: black;
-        left: 20%;
-        top: 30%;
-        text-align: center;
-        
-        position: absolute;
-        -webkit-transform: translate3d(-50%, -50%, 0);
-        -moz-transform: translate3d(-50%, -50%, 0);
-        transform: translate3d(-50%, -50%, 0);
-    }
+.form2 {
+  color: black;
+  left: 30%;
+  top: 30%;
+  text-align: center;
+  position: absolute;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.chore-delete-button {
+  box-shadow: 3px 4px 0px 0px #899599;
+  background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+  color:black;
+  border-radius:15px;
+  border:1px solid #d6bcd6;
+  display:inline-block;
+  cursor:pointer;
+  font-family:Arial;
+  font-size:17px;
+  font-weight:bold;
+  padding:7px 30px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #e1e2ed;
+  margin: 0 10px;
+}
+
+.chore-delete-button:hover {
+  background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+  background-color:#bab1ba;
+  color: black;
+}
+
+.chore-delete-button:active {
+  position:relative;
+  top:1px;
+}
+
+.edit-background {
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+  }
+
+  .edit-background::before {
+    content: "";
+    background-image: url(/images/pencils.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+  ;
+  }
+
+  .form {
+    color:white;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    position: absolute;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    border: 10px; 
+  }
+
+  .form1 {
+    color: black;
+    left: 20%;
+    top: 30%;
+    text-align: center;
+    position: absolute;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  
+
+  .my-chore-button {
+    box-shadow: 3px 4px 0px 0px #899599;
+    background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    color:black;
+    border-radius:15px;
+    border:1px solid #d6bcd6;
+    display:inline-block;
+    cursor:pointer;
+    font-family:Arial;
+    font-size:17px;
+    font-weight:bold;
+    padding:7px 30px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+  }
+
+  .my-chore-button:hover {
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color:#bab1ba;
+  }
+
+  .my-chore-button:active {
+    position:relative;
+    top:1px;
+  }
+
+  .new-chore-background {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url(/images/cleaning.jpg);
+    position:relative;
+    background-size: cover;
+    background-position: 0 80%;
+    height: 100%;
+    color: #fff;
+  }
 }
