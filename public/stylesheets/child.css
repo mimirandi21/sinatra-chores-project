@@ -1,5 +1,16 @@
 @media screen {
 
+  .form4 {
+    color:white;
+    left: 50%;
+    top: 30%;
+    text-align: center;
+    position: absolute;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    border: 10px; 
+  }
   #newButton {
     box-shadow: 3px 4px 0px 0px #8d7052;
     background:linear-gradient(to bottom, #8d7052 5%, #dab38a 100%);
@@ -27,6 +38,34 @@
     top:1px;
   }
 
+  .child-edit-button {
+    box-shadow: 3px 4px 0px 0px #899599;
+    background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    color:black;
+    border-radius:15px;
+    border:1px solid #d6bcd6;
+    display:inline-block;
+    cursor:pointer;
+    font-family:Arial;
+    font-size:17px;
+    font-weight:bold;
+    padding:7px 30px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+    margin: 0 10px;
+  }
+  
+  .child-edit-button:hover {
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color:#bab1ba;
+    color: black;
+  }
+  
+  .child-edit-button:active {
+    position:relative;
+    top:1px;
+  }
+  
   .card1 {
     /* Add shadows to create the "card" effect */
     display: flex;
@@ -112,6 +151,7 @@
     ;
   }
 
+  
   .form {
     color:white;
     left: 50%;
@@ -187,7 +227,7 @@
     position:relative;
     top:1px;
   }
-  }
+  
 
   .new-child-background {
     background-image: url(/images/shoes.jpg);

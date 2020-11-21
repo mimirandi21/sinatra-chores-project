@@ -1,17 +1,17 @@
 <link rel="stylesheet" href="/stylesheets/chore.css" />
 <link rel="stylesheet" href="/stylesheets/main.css" />
-
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Carter+One&family=Caveat:wght@700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Lato&family=Luckiest+Guy&family=Merienda+One&family=Permanent+Marker&family=Shadows+Into+Light&family=Ultra&display=swap" rel="stylesheet">
 
 <body class="delete-background">
+
     <div>
-    
         <form class="form2" action="/chores/<%= @chore.id %>" method="POST">
-        <p> Are you sure you want to delete <%= @chore.name %> ?</p>
-        <input type="hidden" name="_method" value="DELETE">
-        <input class="chore-delete-button" type="submit" value="Delete">
-        <a class="chore-delete-button" href="/parents/<%= @parent.id %>" >Cancel</a>
-    
+            <p> Are you sure you want to delete <%= @chore.name %> ?</p>
+            <input type="hidden" name="_method" value="DELETE">
+            <input class="chore-delete-button" type="submit" value="Delete">
+            <a class="chore-delete-button" href="/parents/<%= @parent.id %>" >Cancel</a>
+        </form>
     </div>
+    
 </body>

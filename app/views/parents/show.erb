@@ -1,187 +1,174 @@
 <link rel="stylesheet" href="/stylesheets/parent.css" />
 <link rel="stylesheet" href="/stylesheets/main.css" />
-
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Carter+One&family=Caveat:wght@700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Lato&family=Luckiest+Guy&family=Merienda+One&family=Permanent+Marker&family=Shadows+Into+Light&family=Ultra&display=swap" rel="stylesheet">
 
-<% if @message %>
+  <% if @message %>
     <div><%= @message  %></div>
   <% end %>
 
 <body id="body">
-<!-- Side navigation -->
-<div class="sidenav">
+  <!-- Side navigation -->
+  <div class="sidenav">
     <h2 class="centertext">Hello, <%= @parent.first_name %>!</h2><br/>
     <a href="/chores/new">Create a chore</a>
     <a href="/children/new">Create a child</a>
     <a href="/parents/<%= @parent.id %>/edit">Edit your account</a>
     <a href="/logout">Logoff</a>
+  </div>
 
-</div>
-
-<!-- Page content -->
-<div class="parentmain">
-
+  <!-- Page content -->
+  <div class="parentmain">
     <% if flash[:message] %>
-    <div id="flash-message">
-    <%= flash[:message] %>
-    </div>
+      <div id="flash-message">
+        <%= flash[:message] %>
+      </div>
     <% end %>
 
     <button class="myBigButton" onclick="myFunction2()">Children</button>
     <div id="myDIV2">
-    <% if @children.length != 0 %>
+      <% if @children.length != 0 %>
         <% @children.each do |child|%>
-            <div class="card1">
-                <img class="item1" src="/images/tiny-child.png" alt="Avatar" style="height:70px" style="width:auto">
-                <div class="item"><b><%= child.name %></b></div>
-                <div class="item">Balance: $<%= child.balance.to_i%></div>
+          <div class="card1">
+            <img class="item1" src="/images/tiny-child.png" alt="Avatar" style="height:70px" style="width:auto">
+            <div class="item"><b><%= child.name %></b></div>
+            <div class="item">Balance: $<%= child.balance.to_i%></div>
             <div>
-            <a href="/children/<%= child.id %>/pay"><img class="item2" src="/images/monies.png" alt="Avatar" style="height:40px" style="width:auto">
-            <a href="/children/<%= child.id %>/edit"><img class="item2" src="/images/pencil2.png" alt="Avatar" style="height:30px" style="width:auto"></a>
-            <a href="/children/<%= child.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar" style="height:30px" style="width:auto"></div></a>
+              <a href="/children/<%= child.id %>/pay"><img class="item2" src="/images/monies.png" alt="Avatar" style="height:40px" style="width:auto">
+              <a href="/children/<%= child.id %>/edit"><img class="item2" src="/images/pencil2.png" alt="Avatar" style="height:30px" style="width:auto"></a>
+              <a href="/children/<%= child.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar" style="height:30px" style="width:auto"></a>
             </div>
-
+          </div>
         <% end %>
-    <% else %>
+      <% else %>
         <h4>Huh, looks like you don't have any children.  Would you like to <a class="linkme" href="/children/new">add</a> one?</h4>
-    <% end %>
-</div>
-<br/>
+      <% end %>
+    </div>
+    <br/>
+
     <button class="myBigButton" onclick="myFunction()">Chores not yet taken</button>
-    
     <div id="myDIV">
     <% if @current_chores.length != 0 %>
-        <% @current_chores.each do |chore|%>
-            <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar"style="height:65px" style="width:auto">
-            <%# <div class="container"> %>
-            <div class="item"><b><%= chore.name %></b></div>
-            <div class="item">Value: $<%= chore.value%></div>
-            <div>
-            
+      <% @current_chores.each do |chore|%>
+        <div class="card1">
+          <img class="item1" src="/images/tiny-broom.png" alt="Avatar"style="height:65px" style="width:auto">
+          <div class="item"><b><%= chore.name %></b></div>
+          <div class="item">Value: $<%= chore.value%></div>
+          <div>
             <a href="/chores/<%= chore.id %>/edit"><img class="item2" src="/images/pencil2.png" alt="Avatar" style="height:30px" style="width:auto"></a>
-            <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar" style="height:30px" style="width:auto"></div></a>
-            </div>
-        <% end %>
+            <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar" style="height:30px" style="width:auto"></a>
+          </div>
+        </div>
+      <% end %>
     <% else %>
-        <h4>Huh, looks like you don't have any current chores.  Would you like to <a class="linkme" href="/chores/new">create</a> some?</h4>
+      <h4>Huh, looks like you don't have any current chores.  Would you like to <a class="linkme" href="/chores/new">create</a> some?</h4>
     <% end %>
     </div>
-<br/>
+    <br/>
+
     <button class="myBigButton" onclick="myFunction3()">Taken Chores</button>
     <div id="myDIV3">
     <% if @taken_chores.length != 0 %>
-        <% @taken_chores.each do |chore|%>
-            <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
-            <div class="item"><b><%= chore.child.name %></b></div>
-            <div class="item"><%= chore.name %></div>
-            <div class="item">Value: $<%= chore.value %></div>
-            
-            </div>
-            <% end %>
+      <% @taken_chores.each do |chore|%>
+        <div class="card1">
+          <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
+          <div class="item"><b><%= chore.child.name %></b></div>
+          <div class="item"><%= chore.name %></div>
+          <div class="item">Value: $<%= chore.value %></div>
+        </div>
+      <% end %>
     <% else %>
-        <h4>Looks like there's nothing here right now.</h4>
+      <h4>Looks like there's nothing here right now.</h4>
     <% end %>
-    
-    
     </div>
-
     <br/>
+
     <button class="myBigButton" onclick="myFunction6()">Chores awaiting your approval</button>
-    
     <div id="myDIV6">
     <% if @approve_chores.length != 0 %>
-        <% @approve_chores.each do |chore|%>
-            <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
-            <%# <div class="container"> %>
-            <div class="item"><b><%= chore.child.name %></b></div>
-            <div class="item"><%= chore.name %></div>
-            <div class="item">Value: $<%= chore.value %></div>
-            
-            <div>
+      <% @approve_chores.each do |chore|%>
+        <div class="card1">
+          <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
+          <div class="item"><b><%= chore.child.name %></b></div>
+          <div class="item"><%= chore.name %></div>
+          <div class="item">Value: $<%= chore.value %></div>
+          <div>
             <a href="/chores/<%=chore.id %>/done2"><img class="item2" src="/images/check2.png" alt="Avatar" style="height:40px" style="width:auto"></a>
-            </div>
-            </div>
-        <% end %>
+          </div>
+        </div>
+      <% end %>
     <% else %>
-        <h4>Nothing awaiting approval.</h4>
+      <h4>Nothing awaiting approval.</h4>
     <% end %>
     </div>
+    <br/>
 
-<br/>
     <button class="myBigButton" onclick="myFunction4()">Completed chores</button>
-    
     <div id="myDIV4">
-    <% if @done_chores.length != 0 %>
+      <% if @done_chores.length != 0 %>
         <% @done_chores.each do |chore|%>
-            <div class="card1">
-            <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
-            <%# <div class="container"> %>
-            <div class="item"><b><%= chore.child.name%></b></div>
-            <div class="item"><%= chore.name %></div>
-            <div class="item">Value: $<%= chore.value%></div>
-            
-            <div>
-            
-            <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar" style="height:30px" style="width:auto"></div></a>
-            </div>
+          <div class="card1">
+          <img class="item1" src="/images/tiny-broom.png" alt="Avatar" style="height:65px" style="width:auto">
+          <div class="item"><b><%= chore.child.name%></b></div>
+          <div class="item"><%= chore.name %></div>
+          <div class="item">Value: $<%= chore.value%></div>
+          <div>
+            <a href="/chores/<%= chore.id %>/delete"><img class="item2" src="/images/garbage1.png" alt="Avatar" style="height:30px" style="width:auto"></a>
+          </div>
+        </div>
         <% end %>
-    <% else %>
+      <% else %>
         <h4>Nothing in here right now.</h4>
-    <% end %>
+      <% end %>
     </div>
-
     
-<script>function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-function myFunction2() {
-  var x = document.getElementById("myDIV2");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-function myFunction3() {
-  var x = document.getElementById("myDIV3");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-function myFunction4() {
-  var x = document.getElementById("myDIV4");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-function myFunction5() {
-  var x = document.getElementById("myDIV5");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-function myFunction6() {
-  var x = document.getElementById("myDIV6");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}</script>
-    </div>
+  <script>function myFunction() {
+    var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  function myFunction2() {
+    var x = document.getElementById("myDIV2");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  function myFunction3() {
+    var x = document.getElementById("myDIV3");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  function myFunction4() {
+    var x = document.getElementById("myDIV4");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  function myFunction5() {
+    var x = document.getElementById("myDIV5");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  function myFunction6() {
+    var x = document.getElementById("myDIV6");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }</script>
+  </div>
 </body>

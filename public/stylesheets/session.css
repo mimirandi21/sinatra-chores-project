@@ -46,10 +46,17 @@
     .login-button:hover {
       background:linear-gradient(to bottom, #fdcb92 5%, #fc9826 100%);
       background-color:#fff;
+      color: black;
     }
     .login-button:active {
       position:relative;
       top:1px;
+    }
+
+    a.login-button:hover {
+      background:linear-gradient(to bottom, #fdcb92 5%, #fc9826 100%);
+      background-color:#fff;
+      color: black;
     }
     
     

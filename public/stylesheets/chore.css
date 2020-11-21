@@ -1,5 +1,17 @@
 @media screen {
 
+  .form3 {
+    color:white;
+    left: 50%;
+    top: 30%;
+    text-align: center;
+    position: absolute;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    border: 10px; 
+  }
+  
   .delete-background {
     background-image: url(/images/eraser.jpg);
     position:relative;
@@ -8,6 +20,8 @@
     height: 100%;
     color: #fff;
 }
+
+
 
 .form2 {
   color: black;

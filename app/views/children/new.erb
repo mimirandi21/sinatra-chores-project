@@ -7,7 +7,7 @@
 <body class="new-child-background">
     
     <form class="form1" method="post" action="/children/new">
-    <h1>Create a new child!</h1><br/>
+        <h1>Create a new child!</h1><br/>
         <label for="name">Child Name</label><input type="text" id="name" name="child[name]"><br/>
         <label for="password">Child's Password</label><input type="password" id="password" name="child[password]"><br/>
         <input type="hidden" id="parent_id" name="child[parent_id]" value="<%= @parent.id %>"><br/>

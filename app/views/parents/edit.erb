@@ -5,18 +5,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Carter+One&family=Caveat:wght@700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Lato&family=Luckiest+Guy&family=Merienda+One&family=Permanent+Marker&family=Shadows+Into+Light&family=Ultra&display=swap" rel="stylesheet">
 
 <body class="edit-background">
-    
 
-    <form class="form2" method="post" action="/parents/<%= @parent.id %>">
-    <h1>Edit your account</h1>
-        <input id="hidden" type="hidden" name="_method" value="patch">
-        <label for="email">Email Address  </label><input type="email" id="email" name="parent[email]" value="<%= @parent.email %>"><br/>
-        <label for="password">Password  </label><input type="password" id="password" name="parent[password]"><br/>
-        <label for="first_name">First Name  </label><input type="text" id="first_name" name="parent[first_name]" value="<%= @parent.first_name %>"><br/>
-        <label for="last_name">Last Name  </label><input type="text" id="last_name" name="parent[last_name]" value="<%= @parent.last_name %>"><br><br/>
-        <input class="my-other-button" type="submit" value="Edit Your Account!">
-
-        <a class="my-other-button2" href="/parents/<%= @parent.id %>/delete">Delete Your Account</a>
-    </form>
-    
-</body>
+    <div>    
+        <form class="form4" method="post" action="/parents/<%= @parent.id %>">
+            <h1>Edit your account</h1>
+            <input id="hidden" type="hidden" name="_method" value="patch">
+            <label class="label-center" for="email">Email Address  </label><input class="input-center" type="email" id="email" name="parent[email]" value="<%= @parent.email %>"><br/>
+            <label class="label-center" for="password">Password  </label><input class="input-center" type="password" id="password" name="parent[password]"><br/>
+            <label class="label-center" for="first_name">First Name  </label><input class="input-center" type="text" id="first_name" name="parent[first_name]" value="<%= @parent.first_name %>"><br/>
+            <label class="label-center" for="last_name">Last Name  </label><input class="input-center" type="text" id="last_name" name="parent[last_name]" value="<%= @parent.last_name %>"><br><br/>
+            <input class="my-edit-button" type="submit" value="Edit Your Account!">
+            
+        </form>
+        <a class="my-edit-button2" href="/parents/<%= @parent.id %>/delete">Delete Your Account</a>
+    </div>
+</body> 

@@ -7,18 +7,18 @@
 
 <body class="login-background-image background-image">
 
-    <div>  
+    <% if flash.has?(:message) %>
+        <%= flash[:message] %>
+    <% end %>
 
-    <form class="form" method="post" action="/parents_login">
-    <h1>Please Log in</h1><br/>
-    <label for="email">Email address</label>
-    <input type="text" id="email" name="parent[email]"><br/>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="parent[password]"><br/>
-    <input class="login-button" type="submit" value="Log In">
-    <a class="login-button" href="/">Start Over</a>
-    </form> 
-    
-    </div><br/>
+    <div>  
+        <form class="form" method="post" action="/parents_login">
+            <h1>Please Log in</h1><br/>
+            <label for="email">Email address</label><input type="text" id="email" name="parent[email]"><br/>
+            <label for="password">Password</label><input type="password" id="password" name="parent[password]"><br/>
+            <input class="login-button" type="submit" value="Log In">
+            <a class="login-button" href="/">Start Over</a>
+        </form> 
+    </div>
     
 </body>

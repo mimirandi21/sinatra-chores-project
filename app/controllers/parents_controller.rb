@@ -55,6 +55,7 @@ class ParentsController < ApplicationController
     children.destroy_all
     chores.destroy_all
     parent.destroy
+    session.clear
     redirect "/"
   end
 

@@ -7,9 +7,10 @@
     <div>
     
         <form class="delete-form" action="/children/<%= @child.id %>" method="POST">
-        <p> Are you sure you want to delete <%= @child.name %>?</p>
-        <input type="hidden" name="_method" value="DELETE">
-        <input class="child-delete-button" type="submit" value="Delete">
-        <a class="child-delete-button" href="/parents/<%= @parent.id %>" >Cancel</a>
+            <p> Are you sure you want to delete <%= @child.name %>?</p>
+            <input type="hidden" name="_method" value="DELETE">
+            <input class="child-delete-button" type="submit" value="Delete">
+            <a class="child-delete-button" href="/parents/<%= @parent.id %>" >Cancel</a>
+        </form>
     </div>
 </body>
