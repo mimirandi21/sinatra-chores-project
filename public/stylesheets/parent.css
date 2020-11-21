@@ -270,6 +270,14 @@
     top:1px;
   }
 
+  .edit-box {
+    margin-top:5px;
+    left: 43%;
+    top: 47%;
+    position: absolute;
+    text-align: center;
+  }
+
   .my-edit-button2 {
     box-shadow: 3px 4px 0px 0px #899599;
     background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
@@ -286,7 +294,7 @@
     text-shadow:0px 1px 0px #e1e2ed;
     text-align: center;
     margin-top: 10px;
-    margin-left: 125px;
+    margin-right: 10px;
     opacity: .99;
   }
   

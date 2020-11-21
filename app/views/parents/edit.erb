@@ -17,6 +17,9 @@
             <input class="my-edit-button" type="submit" value="Edit Your Account!">
             
         </form>
-        <a class="my-edit-button2" href="/parents/<%= @parent.id %>/delete">Delete Your Account</a>
+        <div class="edit-box">
+            <a class="my-edit-button2" href="/parents/<%= @parent.id %>">Go Back</a>
+            <a class="my-edit-button2" href="/parents/<%= @parent.id %>/delete">Delete Your Account</a>
+        </div>
     </div>
 </body> 

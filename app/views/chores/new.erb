@@ -12,6 +12,7 @@
         <input type="hidden" id="parent_id" name="chore[parent_id]" value="<%= @parent.id %>"><br/>
         <input type="hidden" id="tagged_complete" name="chore[tagged_complete]" value=0>
         <input class="my-chore-button" type="submit" value="Create a New Chore!">
+        <a class="my-chore-button" href="/parents/<%= @parent.id %>">Go Back</a>
     </form>
     
 </body>

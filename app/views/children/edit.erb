@@ -12,5 +12,6 @@
         <label for="password">Child's Password</label><input type="password" id="password" name="child[password]" value="<%= @child.password %>"><br/>
         <input type="hidden" id="parent_id" name="child[parent_id]" value="<%= @parent.id %>"><br/>
         <input class="child-edit-button" type="submit" value="Edit <%= @child.name %>!">
+        <a class="child-edit-button" href="/parents/<%= @parent.id %>">Go Back</a>
     </form>
 </body>

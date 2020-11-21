@@ -13,6 +13,7 @@
         <input type="hidden" id="parent_id" name="child[parent_id]" value="<%= @parent.id %>"><br/>
         <input type="hidden" id="balance" name="child[balance]" value=0>
         <input id="newButton" type="submit" value="Create a New Child!">
+        <a id="newButton" href="/parents/<%= @parent.id %>">Go Back</a>
     </form>
 </body>
 

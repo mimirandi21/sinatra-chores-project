@@ -129,6 +129,7 @@
   .my-chore-button:hover {
     background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
     background-color:#bab1ba;
+    color: black;
   }
 
   .my-chore-button:active {
