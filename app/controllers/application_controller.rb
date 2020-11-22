@@ -29,8 +29,9 @@ class ApplicationController < Sinatra::Base
       @current_user ||= Parent.find_by(id: session[:parent_id]) || @current_user ||= Child.find_by(id: session[:child_id])
     end
 
-    
-      
+    def creating_user
+      @creating_user||= Parent.find_by(id: session[:parent_id])
+    end
       
     
 
@@ -46,11 +47,7 @@ class ApplicationController < Sinatra::Base
       
     end
     
-    # finds all todos that are incomplete and have a datetime prior to current time
-    def incomplete_chores(todos)
-      Chore.select{ |chore| chore.tagged_complete != 3 }
-    end
-    
+        
   end
 
 
