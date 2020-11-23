@@ -63,18 +63,31 @@ class SessionsController < ApplicationController
     end
 
     post '/children_login' do
-        child = Child.find_by(name: params[:child][:name])
+        child = Child.where(name: params[:child][:name])
         
-        if child && child.authenticate(params[:child][:password]) #verify child and authenticate password
-            #assign session child id to child id and redirect to child page
-            session[:child_id] = child.id
-            redirect to "/children/#{current_user.id}"
+        
+        if params[:child][:parent_name] 
+            child = child.find do |kid|
+                kid.parent.first_name == params[:child][:parent_name]
+            end
+            if child && child.authenticate(params[:child][:password])#verify child and authenticate password
+                #assign session child id to child id and redirect to child page
+                session[:child_id] = child.id
+                redirect to "/children/#{current_user.id}"
+            else
+                #redirect to login page and error message if not verified
+                @message = "Oops, try again!"
+                erb :'sessions/children_login'
+            end
+        elsif child.length != 1
+            @message = "Looks like we need a little more information"
+            erb :'sessions/child_recheck'
         else
             #redirect to login page and error message if not verified
             @message = "Oops, try again!"
             erb :'sessions/children_login'
         end
-
+        
     end
 
     get '/logout' do

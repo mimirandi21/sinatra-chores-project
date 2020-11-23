@@ -39,10 +39,16 @@ class ParentsController < ApplicationController
   # PATCH: /parents/5
   patch "/parents/:id" do
     #update parent account, back to parent page and confirmation message
-    @parent = Parent.find_by_id(params[:id])
-    @parent.update(params[:parent])
-    flash[:message] = "Your account has been updated."
-    redirect :"/parents/#{@parent.id}"
+    if logged_in? && creating_user #verifys user logged in and correct user (using helpers)
+      @parent = Parent.find_by_id(params[:id])
+      @parent.update(params[:parent])
+      flash[:message] = "Your account has been updated."
+      redirect :"/parents/#{@parent.id}"
+    else
+      #reroute to login page and error message if not verified
+      flash[:message] = "Please log in."
+      redirect "/login_route"
+    end
   end
 
   get '/parents/:id/delete' do
@@ -58,14 +64,20 @@ class ParentsController < ApplicationController
   # DELETE: /parents/5/delete
   delete "/parents/:id" do
     #delete parent account and all created children/chores, clear session, return to main page
-    parent = Parent.find_by_id(params[:id])
-    children = Child.where(:parent_id => params[:id])
-    chores = Child.where(:parent_id => params[:id])
-    children.destroy_all
-    chores.destroy_all
-    parent.destroy
-    session.clear
-    redirect "/"
+    if logged_in? && creating_user #verifys user logged in and correct user (using helpers)
+      parent = Parent.find_by_id(params[:id])
+      children = Child.where(:parent_id => params[:id])
+      chores = Child.where(:parent_id => params[:id])
+      children.destroy_all
+      chores.destroy_all
+      parent.destroy
+      session.clear
+      redirect "/"
+    else
+      #reroute to login page and error message if not verified
+      flash[:message] = "Please log in."
+      redirect "/login_route"
+    end
   end
 
   

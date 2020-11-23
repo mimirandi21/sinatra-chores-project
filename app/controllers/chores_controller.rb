@@ -87,9 +87,15 @@ class ChoresController < ApplicationController
   # POST: /chores
   post "/chores/new" do
     #update chore information, reroute to parent page
-    @parent = Parent.find_by(:id =>session[:parent_id])
-    @chore = Chore.create(params[:chore])
-    redirect "/parents/#{@parent.id}"
+    if logged_in? && current_user #verifys user logged in and correct user (using helpers)
+      @parent = Parent.find_by(:id =>session[:parent_id])
+      @chore = Chore.create(params[:chore])
+      redirect "/parents/#{@parent.id}"
+    else
+      #reroute to login page and error message if not verified
+      flash[:message] = "Please log in."
+      redirect "/login_route"
+    end
   end
 
   # GET: /chores/5/edit
@@ -108,11 +114,17 @@ class ChoresController < ApplicationController
   # PATCH: /chores/5
   patch "/chores/:id" do
     #update chore information from edit page, reroute to parent page, confirmation message
-    chore = Chore.find_by_id(params[:id])
-    @parent = Parent.find_by(:id =>session[:parent_id])
-    chore.update(params[:chore])
-    flash[:message] = "Chore has been updated."
-    redirect :"/parents/#{@parent.id}"
+    if logged_in? && creating_user #verifys user logged in and correct user (using helpers)
+      chore = Chore.find_by_id(params[:id])
+      @parent = Parent.find_by(:id =>session[:parent_id])
+      chore.update(params[:chore])
+      flash[:message] = "Chore has been updated."
+      redirect :"/parents/#{@parent.id}"
+    else
+      #reroute to login page and error message if not verified
+      flash[:message] = "Please log in."
+      redirect "/login_route"
+    end
   end
 
   get '/chores/:id/delete' do
@@ -130,10 +142,16 @@ class ChoresController < ApplicationController
   # DELETE: /chores/5/delete
   delete "/chores/:id" do
     #delete chore, reroute to parent page, confirmation message
-    @parent = Parent.find_by(:id =>session[:parent_id])
-    chore = Chore.find_by_id(params[:id])
-    chore.destroy
-    flash[:message] = "Chore has been removed from the list."
-    redirect "/parents/#{@parent.id}"
+    if logged_in? && creating_user #verifys user logged in and correct user (using helpers)
+      @parent = Parent.find_by(:id =>session[:parent_id])
+      chore = Chore.find_by_id(params[:id])
+      chore.destroy
+      flash[:message] = "Chore has been removed from the list."
+      redirect "/parents/#{@parent.id}"
+    else
+      #reroute to login page and error message if not verified
+      flash[:message] = "Please log in."
+      redirect "/login_route"
+    end
   end
 end

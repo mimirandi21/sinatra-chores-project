@@ -18,9 +18,15 @@ class ChildrenController < ApplicationController
   # POST: /children
   post "/children/new" do
     #create child account and attach to creating parent account
-    @parent = Parent.find_by(:id =>session[:parent_id])
-    @child = Child.create(params[:child])
-    redirect "/parents/#{@parent.id}"
+    if logged_in? && creating_user #verifys user logged in and correct user (using helpers)
+      @parent = Parent.find_by(:id =>session[:parent_id])
+      @child = Child.create(params[:child])
+      redirect "/parents/#{@parent.id}"
+    else
+      #reroute to login page and error message if not verified
+      flash[:message] = "Please log in."
+      redirect "/login_route"
+    end
   end
 
   get "/children/:id/pay" do
@@ -72,15 +78,21 @@ class ChildrenController < ApplicationController
   # PATCH: /children/5
   patch "/children/:id" do
     #update all child information from edit form, reroute to parent page, give confirmation message
-    @parent = Parent.find_by(:id =>session[:parent_id])
-    child = Child.find_by_id(params[:id])
-    child.update(params[:child])
-    flash[:message] = "Child successfully updated."
-    redirect "/parents/#{@parent.id}"
+    if logged_in? && creating_user #verifys user logged in and correct user (using helpers)
+      @parent = Parent.find_by(:id =>session[:parent_id])
+      child = Child.find_by_id(params[:id])
+      child.update(params[:child])
+      flash[:message] = "Child successfully updated."
+      redirect "/parents/#{@parent.id}"
+    else
+      #reroute to login page and error if not verified
+      flash[:message] = "Please log in."
+      redirect "/login_route"
+    end
   end
 
   get '/children/:id/delete' do
-    if logged_in? && creating_user #verifys user logged in and correct user (using helpers)
+
       @parent = Parent.find_by(:id =>session[:parent_id])
       @child = Child.find(params[:id])
       erb :"/children/delete"
@@ -93,10 +105,16 @@ class ChildrenController < ApplicationController
   # DELETE: /children/5/delete
   delete "/children/:id" do
     #destroy child, route back to parent page and confirmation message
-    @parent = Parent.find_by(:id =>session[:parent_id])
-    child = Child.find_by_id(params[:id])
-    child.destroy
-    flash[:message] = "Child successfully left the nest."
-    redirect "/parents/#{@parent.id}"
+    if logged_in? && creating_user #verifys user logged in and correct user (using helpers)
+      @parent = Parent.find_by(:id =>session[:parent_id])
+      child = Child.find_by_id(params[:id])
+      child.destroy
+      flash[:message] = "Child successfully left the nest."
+      redirect "/parents/#{@parent.id}"
+    else
+      #reroute to login page and error if not verified
+      flash[:message] = "Please log in."
+      redirect "/login_route"
+    end
   end
 end
