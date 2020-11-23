@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    #create session, route to main page
     @message = session[:message]
     session[:message] = nil
     erb :welcome
@@ -30,6 +31,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def creating_user
+    #returns instance of parent that is signed in, doesn't allow child accounts to access edit/delete pages
       @creating_user||= Parent.find_by(id: session[:parent_id])
     end
       
