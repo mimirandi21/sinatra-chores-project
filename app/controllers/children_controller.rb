@@ -92,7 +92,7 @@ class ChildrenController < ApplicationController
   end
 
   get '/children/:id/delete' do
-
+    if logged_in? && creating_user #verifys user logged in and correct user (using helpers)
       @parent = Parent.find_by(:id =>session[:parent_id])
       @child = Child.find(params[:id])
       erb :"/children/delete"

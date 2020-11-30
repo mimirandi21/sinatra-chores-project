@@ -1,5 +1,13 @@
 @media screen {
     
+  .recheck-background {
+    background-image: url(/images/chalkboard-question.jpg);
+    position:relative;
+    background-size: cover;
+    background-position: 0 35%;
+    height: 100%;
+    color: #fff;
+  }
     .welcome-background-image {
         background-image: url(/images/family-1165911.jpg);
         position:relative;
@@ -17,6 +25,8 @@
       height: 100%;
       color: #fff;
     }
+
+    
 
     .signup-background-image {
       background-image: url(/images/yellow-waves.jpg);
