@@ -1,13 +1,7 @@
 @media screen {
     
-  .recheck-background {
-    background-image: url(/images/chalkboard-question.jpg);
-    position:relative;
-    background-size: cover;
-    background-position: 0 35%;
-    height: 100%;
-    color: #fff;
-  }
+  
+
     .welcome-background-image {
         background-image: url(/images/family-1165911.jpg);
         position:relative;
@@ -110,6 +104,14 @@
     position: relative;
     text-align: center;
     color: white;
+  }
+  body.recheck-background {
+    background-image: url(/images/new-chalkboard.jpg);
+    position:relative;
+    background-size: cover;
+    background-position: 0 20%;
+    height: 100%;
+    color: #fff;
   }
 
   #biggiebody {
