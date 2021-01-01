@@ -11,8 +11,9 @@ Follow along below to clone and run this repo.
 
 Project Outline: https://docs.google.com/document/d/172tCgxtrcKU-H6djOgaRKyJyFxzaOeD8OBNFw_HXPBA/edit?usp=sharing
 
-CLI Project Blog Post: https://dev.to/meemeek/buttons-buttons-and-more-buttons-2oe5
-Youtube Project Post: https://youtu.be/UOxASnISdFk
+Project Video: https://drive.google.com/file/d/1bfQRjG8UF9VZufm-8oA1rZY2zqrbpviD/view?usp=sharing
+
+Project Blog Post: https://dev.to/meemeek/buttons-buttons-and-more-buttons-2oe5
 
 THANKS FOR CHECKING OUT MY PROJECT!
 
