@@ -11,7 +11,7 @@ Follow along below to clone and run this repo.
 
 Project Outline: https://docs.google.com/document/d/172tCgxtrcKU-H6djOgaRKyJyFxzaOeD8OBNFw_HXPBA/edit?usp=sharing
 
-CLI Project Blog Post: https://medium.com/@ogroetz/active-record-created-at-column-9e125aa2492a
+CLI Project Blog Post: https://dev.to/meemeek/buttons-buttons-and-more-buttons-2oe5
 Youtube Project Post: https://youtu.be/UOxASnISdFk
 
 THANKS FOR CHECKING OUT MY PROJECT!
