@@ -2,6 +2,8 @@
 This app was created to help busy parents keep track of chores their children are doing and allows them to incentivize these chores with a monetary value!
 ![screenshot](./public/images/Sinatra.png)
 
+[Project Walkthrough Video](https://drive.google.com/file/d/1bfQRjG8UF9VZufm-8oA1rZY2zqrbpviD/view?usp=sharing)
+
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
@@ -16,8 +18,10 @@ This app was created to help busy parents keep track of chores their children ar
 An app built to help keep kids busy during these difficult times while they are at home and allow mom and dad to continue on with their days without multiple phone calls througout the day asking what the kids can do!
 
 ## Screenshots
+Parent main screen
 ![Parent screenshot](./public/images/Sinatra-parent.png)
-Parent screen
+
+Child main screen
 ![Child screenshot](./public/images/Sinatra-child.png)
 
 ## Technologies
@@ -29,11 +33,9 @@ Parent screen
 
 ****To see more about this process:****
 
-Project Walkthrough Video: https://drive.google.com/file/d/1bfQRjG8UF9VZufm-8oA1rZY2zqrbpviD/view?usp=sharing
+[Project Outline](https://docs.google.com/document/d/172tCgxtrcKU-H6djOgaRKyJyFxzaOeD8OBNFw_HXPBA/edit?usp=sharing)
 
-Project Outline: https://docs.google.com/document/d/172tCgxtrcKU-H6djOgaRKyJyFxzaOeD8OBNFw_HXPBA/edit?usp=sharing
-
-Project Blog Post: https://dev.to/meemeek/buttons-buttons-and-more-buttons-2oe5
+[Project Blog Post](https://dev.to/meemeek/buttons-buttons-and-more-buttons-2oe5)
 
 THANKS FOR CHECKING OUT MY PROJECT!
 
