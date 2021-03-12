@@ -31,7 +31,13 @@ Parent screen
 
 Project Outline: https://docs.google.com/document/d/172tCgxtrcKU-H6djOgaRKyJyFxzaOeD8OBNFw_HXPBA/edit?usp=sharing
 
+<<<<<<< HEAD
 Blog Post: https://dev.to/meemeek/buttons-buttons-and-more-buttons-2oe5
+=======
+Project Video: https://drive.google.com/file/d/1bfQRjG8UF9VZufm-8oA1rZY2zqrbpviD/view?usp=sharing
+
+Project Blog Post: https://dev.to/meemeek/buttons-buttons-and-more-buttons-2oe5
+>>>>>>> 7e232a7af70633e63c7c125c4429a3a7e1b3dbb9
 
 THANKS FOR CHECKING OUT MY PROJECT!
 
