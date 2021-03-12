@@ -29,9 +29,9 @@ Parent screen
 
 ****To see more about this process:****
 
-Project Outline: https://docs.google.com/document/d/172tCgxtrcKU-H6djOgaRKyJyFxzaOeD8OBNFw_HXPBA/edit?usp=sharing
+Project Walkthrough Video: https://drive.google.com/file/d/1bfQRjG8UF9VZufm-8oA1rZY2zqrbpviD/view?usp=sharing
 
-Project Video: https://drive.google.com/file/d/1bfQRjG8UF9VZufm-8oA1rZY2zqrbpviD/view?usp=sharing
+Project Outline: https://docs.google.com/document/d/172tCgxtrcKU-H6djOgaRKyJyFxzaOeD8OBNFw_HXPBA/edit?usp=sharing
 
 Project Blog Post: https://dev.to/meemeek/buttons-buttons-and-more-buttons-2oe5
 
